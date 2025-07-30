@@ -1,0 +1,1359 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Js api - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Js api
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Справочник JS API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Справочник Widget API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Справочник Widget API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Справочник Widget API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../consultant/chat/" class="md-nav__link">
+        Чат
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../consultant/offline_message/" class="md-nav__link">
+        Заявка с сайта
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sitephone/" class="md-nav__link">
+        Сайтфон
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lead/offline_message_generator/" class="md-nav__link">
+        Генератор заявки
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lead/call_generator/" class="md-nav__link">
+        Генератор звонка
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lead/personal_form/" class="md-nav__link">
+        Персональная форма
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code/" class="md-nav__link">
+        Код вставки
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handbk/widget/" class="md-nav__link">
+        Виджет
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handbk/create_widget/" class="md-nav__link">
+        ViewController
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpls/" class="md-nav__link">
+        Шаблоны
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/form/" class="md-nav__link">
+        Плагины
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        События
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        Примеры использования Widget API
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Работа с событиями
+  </a>
+  
+    <nav class="md-nav" aria-label="Работа с событиями">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Отправка пользовательского события
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Работа с баннером
+  </a>
+  
+    <nav class="md-nav" aria-label="Работа с баннером">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Проверка наличия операторов онлайн
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Форма заявки
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Пример использования альтернативного способа отправки пользовательской заявки
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Форма сайтфона
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Форма чата
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Работа со свойствами
+  </a>
+  
+    <nav class="md-nav" aria-label="Работа со свойствами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Добавление свойства посетителю
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    Проверка наличия свойства у посетителя
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    Получение значения свойства посетителя
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    Удаление свойства посетителя
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    Автоматический выбор номера
+  </a>
+  
+    <nav class="md-nav" aria-label="Автоматический выбор номера">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    Автоматический выбор номера в динамических блоках
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    Управление автоматическим выбором номера
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    Получение номеров, выданных посетителю
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    Получение зарезервированных под посетителя номеров ДТ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    Получение массива фактически автоматически выбранных номеров
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    Эмуляция перехода между страницами сайта
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Js api</h1>
+                
+                <p>Пользователи могут использовать JavaScript API для решения следующих задач:</p>
+<p>Для реализации дополнительных возможностей на сайте:</p>
+<ul>
+<li>
+<p>открытие форм связи онлайн-консультанта (чат, заявка) из любого места сайта пользователя.
+Получение дополнительной информации о посетителях сайта;</p>
+</li>
+<li>
+<p>открытие формы и заказ обратного звонка через сайтфон;</p>
+</li>
+<li>
+<p>присвоение свойств (например, посетителю, открывшему личный кабинет, присвоено свойство “действующий клиент”, открывшему тарифы - “потенциальный” и т.д.).</p>
+</li>
+</ul>
+<p>Получение дополнительных данных в отчетах:</p>
+<ul>
+<li>
+<p>данные о любом пользовательском событии на сайте (чтение книги, просмотр тарифов, открытие личного кабинете и т.д);</p>
+</li>
+<li>
+<p>информация с любой формы заявки пользователя.</p>
+</li>
+</ul>
+<h2 id="_1">Работа с событиями</h2>
+<h3 id="_2">Отправка пользовательского события</h3>
+<p>Для отправки пользовательского события используется следующий метод:</p>
+<pre><code>Comagic.trackEvent(category, action, name, value);
+</code></pre>
+<p>Параметры:</p>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>category</td>
+<td>text</td>
+<td>категория, обязательный параметр</td>
+</tr>
+<tr>
+<td>action</td>
+<td>text</td>
+<td>действие, обязательный параметр</td>
+</tr>
+<tr>
+<td>name</td>
+<td>text</td>
+<td>ярлык, необязательный параметр</td>
+</tr>
+<tr>
+<td>value</td>
+<td>text</td>
+<td>значение, необязательный параметр</td>
+</tr>
+</tbody>
+</table>
+<p>Пример использования:</p>
+<pre><code>Comagic.trackEvent('Offer', 'DownloadBook', 'CallTrackingBook', 'value');
+</code></pre>
+<p><strong>Получение ID посетителя</strong></p>
+<p>Для получения ID посетителя используется следующий метод:</p>
+<pre><code>Comagic.getVisitorId();
+</code></pre>
+<h2 id="_3">Работа с баннером</h2>
+<h3 id="_4">Проверка наличия операторов онлайн</h3>
+<p>Для проверки наличия операторов онлайн используется метод:</p>
+<pre><code>Comagic.getOperatorStatus();
+</code></pre>
+<p>Метод возвращает <code>true</code>, если есть хотя бы один доступный оператор, иначе <code>false</code>.</p>
+<h3 id="_5">Форма заявки</h3>
+<p>Для открытия формы заявки используется метод:</p>
+<pre><code>Comagic.openSiteRequestPanel();
+</code></pre>
+<p><strong>Пользовательская форма заявки</strong></p>
+<p>Данные, полученные при использовании пользовательской формы заявки на сайте, можно отправить с помощью следующего метода:</p>
+<pre><code>Comagic.addOfflineRequest(req, callback);
+</code></pre>
+<p>Пользоваться данным методом можно лишь в случае отправки формы способом, не приводящим к перезагрузке страницы! Для остальных ситуаций есть альтернативный метод.</p>
+<p>Параметры:</p>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>req</td>
+<td><code>{"name": myName, "email": myEmail, "phone": myPhone, "message": myMessage, "is_sale": mySale, "sale_cost": myCost}</code></td>
+<td>Описание параметров: <code>myName</code> - тип text - имя посетителя, <code>myEmail</code> - тип text - адрес электронной почты посетителя, <code>myPhone</code> - тип text - телефон посетителя, <code>myMessage</code> - тип text - текст заявки и остальная информация, для которой нет отдельного поля, <code>mySale</code> - <code>true</code> - если это продажа; <code>false</code> - если не продажа (по умолчанию), <code>myCost</code> - сумма сделки. Если необходимо передать сумму сделки, то обязательно надо передать в параметре <code>is_sale</code> значение <code>true</code>.</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>"success": &lt;Boolean&gt;, "result": {"code": &lt;String&gt;}}</code></td>
+<td>Функция одного аргумента, которая будет вызвана после того, как сервер пришлет результат сохранения формы. Необязательный параметр.</td>
+</tr>
+</tbody>
+</table>
+<p>Пример:</p>
+<ol>
+<li>Обычная заявка:</li>
+</ol>
+<pre><code>Comagic.addOfflineRequest({
+  name: 'Дмитрий',
+  email: 'dmitry@comagic.ru',
+  phone: '79123456789',
+  message: 'Текст заявки...'
+});
+</code></pre>
+<ol>
+<li>Заявка, приведшая к продаже:</li>
+</ol>
+<pre><code>Comagic.addOfflineRequest({
+  name: 'Дмитрий',
+  email: 'dmitry@comagic.ru',
+  phone: '79123456789',
+  message: 'Онлайн заказ...',
+  is_sale: true,
+  sale_cost: '9999'
+});
+</code></pre>
+<ol>
+<li>Пример с использованием параметра callback:</li>
+</ol>
+<pre><code>Comagic.addOfflineRequest({&quot;name&quot;: &quot;My Name Is&quot;}, function(o) {console.log(o.response)});
+</code></pre>
+<p>после успешного сохранения заявки в консоль браузера будет выведен результат:</p>
+<pre><code>String {success: true, result: null}
+</code></pre>
+<p><strong>Альтернативный способ отправки пользовательской заявки</strong></p>
+<ol>
+<li>Перед отправкой заявки нужно получить аутентификационные данные виджета, используя метод JS API <code>Comagic.getCredentials()</code>. Метод возвращает объект:</li>
+</ol>
+<pre><code>{
+  &quot;site_key&quot;: &quot;VcB4qqpO1WPSopO670cAbXwAH9Ryaw75&quot;,
+  &quot;visitor_id&quot;: 17258569,
+  &quot;hit_id&quot;: 546833568748,
+  &quot;session_id&quot;: 255544855,
+  &quot;consultant_server_url&quot;: &quot;https://server.comagic.ru/&quot; //базовая часть URL
+}
+</code></pre>
+<ol>
+<li>
+<p>Передать полученные данные вместе с остальным данными формы.</p>
+</li>
+<li>
+<p>В серверном обработчике заявки сделать HTTP-запрос к сервису для добавления заявки.</p>
+</li>
+</ol>
+<p>Базовую часть URL жёстко прописывать нельзя. Её необходимо взять из данных п.1. Она может меняться.</p>
+<pre><code>POST https://server.comagic.ru/api/add_offline_message/
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Form Data //данные отформатированы для наглядности
+site_key=VcB4qqpO1WPSopO670cAbXwAH9Ryaw75
+&amp;visitor_id=17258569
+&amp;hit_id=546833568748
+&amp;session_id=255544855
+&amp;name=John Smith
+&amp;email=no@email.adr
+&amp;phone=+79251234567
+&amp;text=Hello, world!
+&amp;is_sale=true
+&amp;sale_cost=10000
+</code></pre>
+<p>В ответ придёт флаг успешности добавления заявки (<code>application/json</code>):</p>
+<pre><code>{
+  &quot;success&quot;: true
+}
+</code></pre>
+<h3 id="_6">Пример использования альтернативного способа отправки пользовательской заявки</h3>
+<p><strong>Вариант с перезагрузкой страницы</strong></p>
+<p>Будем исходить из того, что на сайте уже установлен код вставки, подключена библиотека jQuery и есть форма обратной связи. Код простейшей формы обратной связи выглядит, примерно, так:</p>
+<pre><code>&lt;form id='myform' action=&quot;/send.php&quot; method=&quot;POST&quot;&gt;
+    &lt;input type=&quot;text&quot; name='name' value='' placeholder=&quot;Введите имя&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; name='phone' value='' placeholder=&quot;Введите номер телефона&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; name='email' value='' placeholder=&quot;Введите e-mail&quot; /&gt;&lt;br&gt;
+    &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;&lt;br&gt;
+    &lt;input type='submit' /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>Для того, чтобы отправить заявку, код формы нужно доработать: добавить служебные поля и обработчик на кнопку "Отправить":</p>
+<pre><code>&lt;form id='myform' action=&quot;/send.php&quot; method=&quot;POST&quot;&gt;
+    &lt;input type=&quot;text&quot; name='name' value='' placeholder=&quot;Введите имя&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; name='phone' value='' placeholder=&quot;Введите номер телефона&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; name='email' value='' placeholder=&quot;Введите e-mail&quot; /&gt;&lt;br&gt;
+    &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;&lt;br&gt;
+    &lt;input type='button' value='Отправить' onclick=&quot;formSubmit()&quot;/&gt;
+    &lt;input type=&quot;hidden&quot; name='site_key'/&gt;
+    &lt;input type=&quot;hidden&quot; name='visitor_id'/&gt;
+    &lt;input type=&quot;hidden&quot; name='hit_id'/&gt;
+    &lt;input type=&quot;hidden&quot; name='session_id'/&gt;
+    &lt;input type=&quot;hidden&quot; name='consultant_server_url'/&gt;
+&lt;/form&gt;
+</code></pre>
+<p>В коде страницы или в отдельном JS-файле нужно написать функцию <code>formSubmit()</code>, которая будет вызываться каждый раз при клике на кнопку "Отправить":</p>
+<pre><code>function formSubmit() {
+    var credentials = Comagic.getCredentials();
+    for (field in credentials) {
+        if (credentials.hasOwnProperty(field)){
+            $('[name='+field+']').val(credentials[field]);
+        }
+    }
+    $('#myform').submit();
+}
+</code></pre>
+<p>Этот код получает служебную информацию, сохраняет ее в невидимые служебные поля формы и отправляет форму на сервер.</p>
+<p>Далее, нужно модифицировать код, который отвечает за обработку заявки на сервере. В нашем случае этот код находится в файле send.php:</p>
+<pre><code>&lt;? /* Здесь код по умолчанию, связанный с обработкой заявки на серверной стороне. Например, отправка писем, или сохранение в базу данных. */ ?&gt;
+&lt;?
+    $url = $_POST['consultant_server_url'].'api/add_offline_message/';
+          $data = array(
+            'site_key' =&gt; $_POST['site_key'], //Значение без изменений из служебного поля site_key
+            'visitor_id' =&gt; $_POST['visitor_id'], //Значение без изменений из служебного поля visitor_id
+            'hit_id' =&gt; $_POST['hit_id'], //Значение без изменений из служебного поля hit_id
+            'session_id' =&gt; $_POST['session_id'], //Значение без изменений из служебного поля session_id
+            'name' =&gt; $_POST['name'], //Имя клиента
+            'email' =&gt; $_POST['email'], //E-mail
+            'phone' =&gt; $_POST['phone'], //Номер телефона
+            'text' =&gt; $_POST['text'], //Текст заявки
+            'is_sale' =&gt; true, //true, если это продажа
+            'sale_cost' =&gt; 10000 //Сумма сделки. Если нужно передать сумму сделки, то is_sale обязательно равно true );
+    /* Если все поля в html-разметке формы называются так же, как этого требует CoMagic, можно написать &quot;$data = $_POST&quot;.
+    В противном случае потребуются дополнительные преобразования. */
+    $options = array( 'http' =&gt;
+        array(
+            'header' =&gt; &quot;Content-type: application/x-www-form-urlencoded; charset=UTF-8&quot;,
+            'method' =&gt; &quot;POST&quot;,
+            'content' =&gt; http_build_query($data)
+        )
+    );
+    print $options['http']['content'];
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $resultArray = json_decode($result, true);
+
+    if ($result === false or $resultArray['success' === false]) {
+        /* Здесь могут быть действия на тот случай, если отправка заявки завершилась ошибкой. */
+    }
+?&gt;
+</code></pre>
+<p><strong>Вариант с AJAX-запросом</strong></p>
+<p>HTML-разметка простейшей формы:</p>
+<pre><code>&lt;form id='myform2'&gt;
+    &lt;input type=&quot;text&quot; name='name' value='' placeholder=&quot;Введите имя&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; name='phone' value='' placeholder=&quot;Введите номер телефона&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; name='email' value='' placeholder=&quot;Введите e-mail&quot; /&gt;&lt;br&gt;
+    &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;&lt;br&gt;
+    &lt;input type='button' value='Отправить' onclick=&quot;sendAjaxSubmit()&quot;/&gt;
+&lt;/form&gt;
+</code></pre>
+<p>JS-код отправки AJAX-запроса:</p>
+<pre><code>function sendAjaxSubmit() {
+    /* Здесь может быть проверка заполненных обязательных полей, валидация номера телефона и другие проверки. */
+     $.ajax({
+         url: 'sendAjax.php',
+         method: 'POST',
+         data: $('#myform2').serialize(),
+         complete: function(response) {
+             if (response.readyState === 4 &amp;&amp; response.status === 200) {
+                alert(response.responseText);
+             }
+         },
+     })
+}
+</code></pre>
+<p>PHP-код обработки полученного запроса:</p>
+<pre><code>&lt;?
+    /* Код для обработки пришедших данных, сохранение в БД или отправка заявки на почту. */
+    $success = true; /* Переменная определяет, удалось ли сохранить заявку. */
+    if ($success) {
+        print 'Заявка успешно отправлена';
+    } else {
+        print 'Произошла непредвиденная ошибка';
+    }
+?&gt;
+</code></pre>
+<p>Для того, чтобы отправить заявку в случае отправки заявки AJAX-запросом, модифицировать HTML-форму не нужно. Нужно модифицировать JS-код таким образом, чтобы получение служебной информации происходило перед отправкой запроса:</p>
+<pre><code>function sendAjaxSubmit() {
+    /* Здесь может быть проверка заполненных обязательных полей, валидация номера телефона и
+    другие проверки. */
+    $.ajax({
+        url: '/sendAjax.php',
+        method: 'POST',
+        data: $('#myform2').serialize(),
+        complete: function(response) {
+            if (response.readyState === 4 &amp;&amp; response.status === 200) {
+                alert(response.responseText);
+            }
+        },
+        beforeSend: function(jqXHR, settings) {
+            var credentials = Comagic.getCredentials();
+            settings.data += '&amp;' + $.param(credentials);
+        }
+    })
+}
+</code></pre>
+<p>Код, который нужно выполнить на сервере. В данном случае он находится в файле sendAjax.php:</p>
+<pre><code>&lt;?
+    /* Здесь код по умолчанию, связанный с обработкой заявки на серверной стороне. Например, отправка писем, или сохранение в базу данных. */
+?&gt;
+&lt;?
+    $success = true; /* Проверка того, что все выполнено корректно. */
+    if ($success) {
+        $url = $_POST['consultant_server_url'].'api/add_offline_message/';
+        $data = array(
+            'site_key' =&gt; $_POST['site_key'], //Значение без изменений из служебного поля site_key
+            'visitor_id' =&gt; $_POST['visitor_id'], //Значение без изменений из служебного поля visitor_id
+            'hit_id' =&gt; $_POST['hit_id'], //Значение без изменений из служебного поля hit_id
+            'session_id' =&gt; $_POST['session_id'], //Значение без изменений из служебного поля session_id
+            'name' =&gt; $_POST['name'], //Имя клиента
+            'email' =&gt; $_POST['email'], //E-mail
+            'phone' =&gt; $_POST['phone'], //Номер телефона
+            'text' =&gt; $_POST['text'] //Текст заявки
+            'is_sale' =&gt; true, //true, если это продажа
+            'sale_cost' =&gt; 10000 //Сумма сделки. Если нужно передать сумму сделки, то is_sale обязательно равно true
+        );
+        /* Если все поля в html-разметке формы называются так же как этого требует comagic, можно написать &quot;$data = $_POST&quot;.
+        В противном случае потребуются дополнительные преобразования. */
+        $options = array(
+            'http' =&gt; array(
+                'header' =&gt; &quot;Content-type: application/x-www-form-urlencoded; charset=UTF-8&quot;,
+                'method' =&gt; &quot;POST&quot;,
+                'content' =&gt; http_build_query($data)
+            )
+        );
+        $context = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        $resultArray = json_decode($result, true);
+        if ($result === false or $resultArray['success' === false]) {
+            /* Обработка случая, если отправка заявки завершилась ошибкой. */
+        } else {
+            print 'Заявка успешно сохранена.';
+        }
+    } else {
+        print 'Произошла непредвиденная ошибка';
+    }
+?&gt;
+</code></pre>
+<h3 id="_7">Форма сайтфона</h3>
+<p>Для открытия нашей стандартной формы сайтфона используется метод:</p>
+<pre><code>ComagicWidget.openSitePhonePanel();
+</code></pre>
+<p><strong>Капча для формы сайтфона</strong></p>
+<pre><code>Comagic.Captcha.get_captcha(callback);
+</code></pre>
+<p>Параметры:</p>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>{key: myKey, url: myURL}</code></td>
+<td>Возвращаемый ответ: <code>myKey</code>- ключ капчи, <code>myURL</code> - адрес картинки.</td>
+</tr>
+</tbody>
+</table>
+<p>Пример:</p>
+<pre><code>Comagic.Captcha.get_captcha(function(resp){console.log(resp)});
+</code></pre>
+<p><strong>Пользовательская форма сайтфона</strong></p>
+<p>Помимо стандартных виджетов можно использовать любую свою форму для обратного звонка на сайте.</p>
+<p>Для этого необходимо встроить вызов метода обратного звонка в свою форму с помощью JS API:</p>
+<pre><code>ComagicWidget.sitePhoneCall({captcha_key: &lt;идентификатор капчи&gt;, captcha_value: &lt;решение капчи&gt;, phone:&lt;номер телефона&gt;, delayed_call_time:&lt;время звонка&gt;, group_id:&lt;id группы&gt;}, callback);
+</code></pre>
+<p>Параметры:</p>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>captcha_key</td>
+<td>text</td>
+<td>Идентификатор капчи. Обязательный, если в настройках обратного звонка включена капча.</td>
+</tr>
+<tr>
+<td>captcha_value</td>
+<td>text</td>
+<td>Решение капчи (то, что ввел посетитель на форме): взять результат myURL из метода <code>Captcha.get_captcha()</code>, перейти по ссылке, увидеть 4 цифры. Обязательный, если в настройках обратного звонка включена капча.</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>text</td>
+<td>Номер телефона посетителя. Обязательный.</td>
+</tr>
+<tr>
+<td>delayed_call_time</td>
+<td>text</td>
+<td>Время совершения звонка в миллисекундах по UTC.</td>
+</tr>
+<tr>
+<td>group_id</td>
+<td>text</td>
+<td>ID группы сотрудников, в которую будет направлен звонок.</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>{"success": &lt;Boolean&gt;, "result":{status: &lt;Integer&gt;, code: &lt;String&gt;}}</code></td>
+<td>Возвращаемый ответ, необязательный (но желательный).  Если его не задать, то функция отработает аналогично вызову из стандартной формы сайтфона и покажет всплывающее уведомление с результатом. Параметры: <code>success:</code> <code>true</code> - успешно, <code>false</code> - не успешно; <code>result</code> - результат вызова: <code>status</code> - статус вызова.</td>
+</tr>
+</tbody>
+</table>
+<p>Возможные статусы:</p>
+<table>
+<thead>
+<tr>
+<th>Код</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>успешно, звонок отправлен на платформу</td>
+</tr>
+<tr>
+<td>1</td>
+<td>капча введена неверно</td>
+</tr>
+<tr>
+<td>2</td>
+<td>не задан сценарий обработки обратного звонка</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ошибка платформы</td>
+</tr>
+<tr>
+<td>4</td>
+<td>исчерпан лимит на количество вызовов в минуту (не более 10 звонков)</td>
+</tr>
+</tbody>
+</table>
+<p>Пример использования:</p>
+<pre><code>ComagicWidget.sitePhoneCall({captcha_key: 'jwgtGYZDYTA...4pBEWRx', captcha_value: '8315', phone:'79101234567', delayed_call_time: 1508927547000 , group_id: '16587'}, function(resp){console.log(resp)});
+</code></pre>
+<h3 id="_8">Форма чата</h3>
+<p>При вызове следующего метода, если есть операторы online, открывается форма чата:</p>
+<pre><code>Comagic.openChatWindow();
+</code></pre>
+<p>Если ни одного оператора нет online, то открывается форма заявки.</p>
+<h2 id="_9">Работа со свойствами</h2>
+<h3 id="_10">Добавление свойства посетителю</h3>
+<p>Для присвоения свойства или его значения используется следующий метод:</p>
+<pre><code>Comagic.setProperty(name, value);
+</code></pre>
+<p>Параметры:</p>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>text</td>
+<td>Имя свойства, которое должно быть присвоено посетителю</td>
+</tr>
+<tr>
+<td>value</td>
+<td>text</td>
+<td>Значение свойства (необязательный параметр)</td>
+</tr>
+</tbody>
+</table>
+<p>Примеры:</p>
+<p>Свойство тип посетителя со значением Потенциальный устанавливается следующим образом:</p>
+<pre><code>Comagic.setProperty('Тип посетителя', 'Потенциальный');
+</code></pre>
+<p>Свойство Действующий клиент (без значения) устанавливается следующим образом:</p>
+<pre><code>Comagic.setProperty('Действующий клиент');
+</code></pre>
+<h3 id="_11">Проверка наличия свойства у посетителя</h3>
+<p>Для проверки наличия свойства у посетиетля используется следующий метод:</p>
+<pre><code>Comagic.hasProperty(name, callback);
+</code></pre>
+<p>Параметры:</p>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>text</td>
+<td>Имя свойства, которое должно быть присвоено посетителю</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>{"success": &lt;Boolean&gt;,"result": &lt;Boolean&gt;,}</code></td>
+<td>Возвращаемый ответ. success: <code>true</code> - метод обработан успешно, <code>false</code> - ошибка; <code>result:</code> <code>true</code> - свойство <code>name</code> установлено <code>false</code> - свойство <code>name</code> не установлено</td>
+</tr>
+</tbody>
+</table>
+<p>Пример:</p>
+<pre><code>Comagic.hasProperty('Действующий клиент', callback);
+Comagic.hasProperty('Действующий клиент', function(resp){console.log(resp)});
+</code></pre>
+<h3 id="_12">Получение значения свойства посетителя</h3>
+<p>Для получения значения свойства у посетителя используется следующий метод:</p>
+<pre><code>Comagic.getProperty(name, callback);
+</code></pre>
+<p>Параметры:</p>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>text</td>
+<td>Имя свойства, которое должно быть присвоено посетителю</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>{"success": &lt;Boolean&gt;, "result": &lt;value&gt;,}</code></td>
+<td>Возвращаемый ответ. <code>success:</code> <code>true</code> - метод обработан успешно, <code>false</code> - ошибка; <code>result:</code> <code>value</code> - значение свойства <code>name</code>, <code>false</code> - свойство name не установлено</td>
+</tr>
+</tbody>
+</table>
+<p>Пример:</p>
+<pre><code>Comagic.getProperty('Тип клиента', callback);
+Comagic.getProperty('Действующий клиент', function(resp){console.log(resp)});
+</code></pre>
+<h3 id="_13">Удаление свойства посетителя</h3>
+<p>Для удаления свойства, заданного посетителю, используется следующий метод:</p>
+<pre><code>Comagic.deleteProperty(name);
+</code></pre>
+<p>Параметры:</p>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>text</td>
+<td>Имя свойства, которое должно быть удалено</td>
+</tr>
+</tbody>
+</table>
+<p>Пример:</p>
+<pre><code>Comagic.deleteProperty('тип посетителя');
+</code></pre>
+<h2 id="_14">Автоматический выбор номера</h2>
+<h3 id="_15">Автоматический выбор номера в динамических блоках</h3>
+<p>Для того, чтобы включить Автоматический выбор номера в динамически добавляемых блоках, в код вставки необходимо добавить дополнительную строку:</p>
+<pre><code>__cs.push([&quot;setDynamicalReplacement&quot;, true]);
+</code></pre>
+<p>или</p>
+<pre><code>Comagic.push([&quot;setDynamicalReplacement&quot;, true]);
+</code></pre>
+<h3 id="_16">Управление автоматическим выбором номера</h3>
+<p>В случае, когда автоматический выбор номера нужна только при выполнении определенных условий, например, только для посетителей Москвы, нужно переопределить функцию, управляющую автоматическим выбором номера, <code>window.__cs_onReplacePhones(phones)</code>. Она работает следующим образом:</p>
+<ul>
+<li>
+<p>если возвращает <code>true</code>, то подмена будет выполнена так, как если бы функция не была переопределена,</p>
+</li>
+<li>
+<p>если возвращает <code>false</code>, то подмена не будет выполнена.</p>
+</li>
+</ul>
+<p>Функция создается в момент инициализации сервисного кода и по умолчанию имеет вид:</p>
+<pre><code>window.__cs_onReplacePhones = function(phones) {return true;};
+</code></pre>
+<p>Если управлять подменой не требуется, то функцию переопределять не нужно.</p>
+<p>Если номера нужны только при определенных условиях, то эту функцию надо переопределить, дописав в тело необходимые условия подмены.</p>
+<p>Также данная функция позволяет не только управлять подменой, но и выполнять её самостоятельно. Для этого в функцию передается массив phones:</p>
+<pre><code>[
+  {
+    id: &quot;#comagic_phone&quot;, // идентификатор
+    img: &quot;/path/to/image&quot;, // адрес картинки (если используется подмена картинками)
+    text: &quot;+7 (495) 926-86-86&quot;, // номер, отформатированный в соответствии с настройками пользователя
+    raw: &quot;74959268686&quot; // номер без форматирования
+  },
+  ...
+]
+</code></pre>
+<h3 id="_17">Получение номеров, выданных посетителю</h3>
+<p>Если клиенту необходимо получить список всех номеров, выданных посетителю сайта, можно воспользоваться следующей функцией:</p>
+<pre><code>Comagic.getPhones();
+</code></pre>
+<p>В ответ вернется массив объектов, аналогичный списку phones в <code>__cs_onReplacePhones</code>.</p>
+<p>Пример:</p>
+<pre><code>[
+  {
+    id: '#comagic_phone', // идентификатор элемента
+    img: null || 'path/to/img', // адрес картинки (если используется подмена картинкой)
+    text: null || '+7(495)999-99-99', // отформатированный номер
+    raw: '74959999999' // номер без форматирования
+  },
+  ...
+]
+</code></pre>
+<p>Параметры:</p>
+<table>
+<thead>
+<tr>
+<th>Тип заменяемого идентификатора</th>
+<th>Пример возвращаемого значения поля id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>#comagic_phone</td>
+</tr>
+<tr>
+<td>class</td>
+<td>.comagic_phone</td>
+</tr>
+<tr>
+<td>name</td>
+<td>[name=comagic_phone]</td>
+</tr>
+<tr>
+<td>number</td>
+<td>number=XXXXXXXXXXX</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_18">Получение зарезервированных под посетителя номеров ДТ</h3>
+<p>Если клиенту необходимо получить список зарезервированных номеров динамического трекинга под посетителя, можно воспользоваться следующей функцией:</p>
+<pre><code>Comagic.getDTPhones();
+</code></pre>
+<p>Эта функция вернет <code>null</code> в случае, когда под посетителя не зарезервировано ни одного номера динамического трекинга.</p>
+<p>Если зарезервированные номера есть, то вернется массив объектов, аналогичный списку phones в <code>__cs_onReplacePhones</code>.</p>
+<p>Пример:</p>
+<pre><code>[
+  {
+    id: '#comagic_phone', // идентификатор элемента
+    img: null || 'path/to/img', // адрес картинки (если используется подмена картинкой)
+    text: null || '+7(495)999-99-99', // отформатированный номер
+    raw: '74959999999' // номер без форматирования
+  },
+  ...
+]
+</code></pre>
+<p>Параметры:</p>
+<table>
+<thead>
+<tr>
+<th>Тип заменяемого идентификатора</th>
+<th>Пример возвращаемого значения поля id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>#comagic_phone</td>
+</tr>
+<tr>
+<td>class</td>
+<td>.comagic_phone</td>
+</tr>
+<tr>
+<td>name</td>
+<td>[name=comagic_phone]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_19">Получение массива фактически автоматически выбранных номеров</h3>
+<p>Эта функция возвращает массив объектов с фактически автоматически выбранными номерами, т.е. номера которыми была выполнена подмена.</p>
+<p>Параметры:</p>
+<table>
+<thead>
+<tr>
+<th>Тип подмены</th>
+<th>Принимаемые значения функцией</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>null, "static", "dynamic"</td>
+</tr>
+</tbody>
+</table>
+<p>Параметр необязателен.</p>
+<p>Пример использоавния без параметров:</p>
+<pre><code>Comagic.getReplacedPhones();
+</code></pre>
+<p>Пример ответа:</p>
+<pre><code>{
+    &quot;number=84872751404&quot;: &quot;74951825168&quot;
+}
+</code></pre>
+<p>Пример использования c параметром dynamic:</p>
+<pre><code>Comagic.getReplacedPhones(&quot;dynamic&quot;);
+</code></pre>
+<p>Пример ответа:</p>
+<pre><code>{
+    &quot;74951825168&quot;: [
+        &quot;number=84872751404&quot;
+    ]
+}
+</code></pre>
+<h3 id="_20">Эмуляция перехода между страницами сайта</h3>
+<p>Эта функция эмулирует поведение нашего кода вставки во время перехода пользователя между страницами(хит) сайта.
+Основное применение: эмуляция перехода между страницами на SPA-сайтах.</p>
+<pre><code>Comagic.reinitTrackView();
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>
