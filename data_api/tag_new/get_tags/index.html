@@ -1,0 +1,931 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Получение списка тегов - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Получение списка тегов
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Общая информация
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/" class="md-nav__link">
+        Права и компоненты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account/get_account/" class="md-nav__link">
+        Аккаунт
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vn/" class="md-nav__link">
+        Виртуальные номера и правила
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sip/" class="md-nav__link">
+        SIP-линии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scenario/get_scenarios/" class="md-nav__link">
+        Сценарии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_media/get_media_files/" class="md-nav__link">
+        Медиафайлы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaigns/" class="md-nav__link">
+        Рекламные кампании
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/" class="md-nav__link">
+        Источники
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auto_calls/" class="md-nav__link">
+        Исходящий обзвон
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sales_funnel_and_deals/" class="md-nav__link">
+        Воронки продаж и Сделки
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/" class="md-nav__link">
+        Сайты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/" class="md-nav__link">
+        Отчёты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        Теги
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../employees/" class="md-nav__link">
+        Сотрудники
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        Адресная книга
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blacklist/" class="md-nav__link">
+        Черный список
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedules/" class="md-nav__link">
+        Графики активности
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/" class="md-nav__link">
+        Клиенты агентов
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../communications/" class="md-nav__link">
+        Загрузка коммуникаций
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../persons/" class="md-nav__link">
+        Персона/Визитор
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Параметры запроса
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Параметры ответа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON структура запроса
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json_1" class="md-nav__link">
+    JSON структура ответа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json_2" class="md-nav__link">
+    JSON Пример ответа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Список возвращаемых ошибок
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Получение списка тегов</h1>
+                
+                <nav>
+<a href="../get_tags"> Получение списка тегов </a> >
+Получение списка тегов
+
+</nav>
+
+<table>
+<thead>
+<tr>
+<th align="left">Метод</th>
+<th align="left"><code>get.tags</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Описание</td>
+<td align="left">Получение списка тегов</td>
+</tr>
+<tr>
+<td align="left">Кому доступен</td>
+<td align="left">Агент, Клиент</td>
+</tr>
+<tr>
+<td align="left">Необходимые компоненты для работы с методом</td>
+<td align="left">Data API для настройки</td>
+</tr>
+<tr>
+<td align="left">Вес метода</td>
+<td align="left">1 балл</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">Параметры запроса</h3>
+<table>
+  <tbody>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Обязательный</th>
+      <th>Допустимые значения</th>
+      <th>Описание</th>
+    </tr>
+    <tr>
+      <td><code>access_token</code></td>
+      <td>string</td>
+      <td>да</td>
+      <td></td>
+      <td>Ключ сессии аутентификации</td>
+    </tr>
+    <tr>
+      <td><code>user_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Уникальный идентификатор пользователя клиента агента от имени которого делается запрос <blockquote>Является обязательным для агента</blockquote> Для получения списка пользователей клиента необходимо использовать метод ["get.customer_users"](../Partners.md#get_customer_user)  </td>
+    </tr>
+    <tr>
+      <td><code>limit</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Количество возвращаемых записей. См. раздел ["Постраничный вывод"](../index.md#_20)</td>
+    </tr>
+    <tr>
+      <td><code>offset</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Сдвиг, определяет с какого номера записи возвращать `"limit"` записей. По умолчанию "0". См. раздел ["Постраничный вывод"](../index.md#_20)</td>
+    </tr>
+    <tr>
+      <td><code>is_include_rating</code></td>
+      <td>boolean</td>
+      <td>нет</td>
+      <td></td>
+      <td>Запросить ли список тегов с рейтингом и статистикой.</td>
+    </tr>
+    <tr>
+      <td><code>filter</code></td>
+      <td>object</td>
+      <td>нет</td>
+      <td></td>
+      <td>См. раздел ["Критерии фильтрации"](../index.md#_filters)</td>
+    </tr>
+    <tr>
+      <td><code>fields</code></td>
+      <td>array</td>
+      <td>нет</td>
+      <td></td>
+      <td>См. раздел ["Представление возвращаемых данных"](../index.md#_views)</td>
+    </tr>
+    <tr>
+      <td><code>sort</code></td>
+      <td>array</td>
+      <td>нет</td>
+      <td></td>
+      <td>См. раздел ["Сортировка данных"](../index.md#_sort)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="_2">Параметры ответа</h3>
+<table>
+  <tbody>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Допустимые значения</th>
+      <th>Фильтрация</th>
+      <th>Сортировка</th>
+      <th>Ответ по умолчанию</th>
+      <th>Описание</th>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td>да</td>
+      <td>Уникальный идентификатор тега</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>string</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td>да</td>
+      <td>Название тега</td>
+    </tr>
+    <tr>
+      <td><code>is_system</code></td>
+      <td>boolean</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td>да</td>
+      <td>Описание отчета пользователя</td>
+    </tr>
+    <tr>
+      <td><code>rating</code></td>
+      <td>number</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td>нет</td>
+      <td>Рейтинг тега. Кол-во обращения с данным тегом за последние 7 дней, проставленных пользователем. Только если включен <code>is_include_rating = true</code></td>
+    </tr>
+    <tr>
+      <td><code>is_auto</code></td>
+      <td>boolean</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td>нет</td>
+      <td>Статус отображающий включено ли Автотегирование</td>
+    </tr>
+    <tr>
+      <td><code>state</code></td>
+      <td>string</td>
+      <td>
+          <ul>
+          <li><code>active</code> <code>Работает</code> - есть хотя бы один проставленный тег за последние 7 дней и Автотегирование включено</li>
+          <li><code>not_active</code> <code>Не работает</code> -  Не нашли хотя бы один проставленный тег за последние 7 дней и Автотегирование включено</li>
+          <li><code>off</code> <code>Отключен</code> Автотегирование отключено</li>
+          </ul>
+      </td>
+      <td>да</td>
+      <td>да</td>
+      <td>нет</td>
+      <td>Статус Автотегирования. Только если включен <code>is_include_rating = true</code></td>
+    </tr>
+    <tr>
+      <td><code>creation_datetime</code></td>
+      <td>iso8601</td>
+      <td><code>YYYY-MM-DD hh:mm:ss</code></td>
+      <td>да</td>
+      <td>да</td>
+      <td>нет</td>
+      <td>Дата создания Тега</td>
+    </tr>
+    <tr>
+      <td><code>color</code></td>
+      <td>string</td>
+      <td>Только HEX цвета - допустимый формат <code>#EBEBEB</code></td>
+      <td>да</td>
+      <td>да</td>
+      <td>нет</td>
+      <td>Цвет тега для отображения в отчетах</td>
+    </tr>
+    <tr>
+      <td><code>condition</code></td>
+      <td>object</td>
+      <td></td>
+      <td>нет</td>
+      <td>нет</td>
+      <td>нет</td>
+      <td>Условие проставления тега на обращения</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="json">JSON структура запроса</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;,
+  &quot;id&quot;:&quot;number&quot;,
+  &quot;method&quot;:&quot;get.tags&quot;,
+  &quot;params&quot;:{
+    &quot;access_token&quot;:&quot;string&quot;,
+    &quot;user_id&quot;:&quot;number&quot;,
+    &quot;offset&quot;:&quot;number&quot;,
+    &quot;limit&quot;:&quot;number&quot;,
+    &quot;is_include_rating&quot;: &quot;boolean&quot;,
+    &quot;filter&quot;:{
+
+    },
+    &quot;sort&quot;:[
+      {
+        &quot;field&quot;:&quot;string&quot;,
+        &quot;order&quot;:&quot;string&quot;
+      }
+    ],
+    &quot;fields&quot;:[
+      &quot;string&quot;
+    ]
+  }
+}
+</code></pre>
+<h3 id="json_1">JSON структура ответа</h3>
+<pre><code class="language-JSON">{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;,
+  &quot;id&quot;:&quot;number&quot;,
+  &quot;result&quot;:{
+    &quot;metadata&quot;:{
+
+    },
+    &quot;data&quot;:[
+      {
+        &quot;id&quot;: &quot;number&quot;,
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;is_system&quot;: &quot;boolean&quot;,
+        &quot;rating&quot;: &quot;number&quot;,
+        &quot;is_auto&quot;: &quot;boolean&quot;,
+        &quot;condition&quot;: {
+
+        },
+        &quot;creation_datetime&quot;: &quot;iso8601&quot;,
+        &quot;color&quot;: &quot;string&quot;,
+        &quot;state&quot;: &quot;string&quot;
+
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="json_2">JSON Пример ответа</h3>
+<pre><code class="language-JSON">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;k7LIWkyCE6_FTw9q7s0PM&quot;,
+    &quot;result&quot;: {
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: 62684,
+                &quot;name&quot;: &quot;1&quot;,
+                &quot;color&quot;: &quot;#EBEBEB&quot;,
+                &quot;state&quot;: &quot;disabled&quot;,
+                &quot;rating&quot;: 0,
+                &quot;is_auto&quot;: false,
+                &quot;condition&quot;: null,
+                &quot;is_system&quot;: false,
+                &quot;creation_datetime&quot;: &quot;2023-08-28 16:45:10&quot;
+            },
+            {
+                &quot;id&quot;: 63850,
+                &quot;name&quot;: &quot;🤬1&quot;,
+                &quot;color&quot;: &quot;#EBEBEB&quot;,
+                &quot;state&quot;: &quot;disabled&quot;,
+                &quot;rating&quot;: 0,
+                &quot;is_auto&quot;: false,
+                &quot;condition&quot;: null,
+                &quot;is_system&quot;: false,
+                &quot;creation_datetime&quot;: &quot;2023-08-28 16:45:10&quot;
+            }
+        ],
+        &quot;metadata&quot;: {
+            &quot;total_items&quot;: 572,
+            &quot;version&quot;: null,
+            &quot;limits&quot;: {}
+        }
+    }
+}
+```### JSON Пример запроса
+
+```JSON
+
+</code></pre>
+<h3 id="_3">Список возвращаемых ошибок</h3>
+<p>Смотрим раздел <a href="../..#_changeErrors">"Список ошибок для методов с глаголом get"</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>
