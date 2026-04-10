@@ -1,0 +1,1633 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Редактирование пула номеров - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Редактирование пула номеров
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Общая информация
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/" class="md-nav__link">
+        Права и компоненты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../account/get_account/" class="md-nav__link">
+        Аккаунт
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vn/" class="md-nav__link">
+        Виртуальные номера и правила
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sip/" class="md-nav__link">
+        SIP-линии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scenario/get_scenarios/" class="md-nav__link">
+        Сценарии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user_media/get_media_files/" class="md-nav__link">
+        Медиафайлы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../campaigns/" class="md-nav__link">
+        Рекламные кампании
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sources/" class="md-nav__link">
+        Источники
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../auto_calls/" class="md-nav__link">
+        Исходящий обзвон
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sales_funnel_and_deals/" class="md-nav__link">
+        Воронки продаж и Сделки
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sites/" class="md-nav__link">
+        Сайты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/" class="md-nav__link">
+        Отчёты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        Теги
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../employees/" class="md-nav__link">
+        Сотрудники
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contacts/" class="md-nav__link">
+        Адресная книга
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blacklist/" class="md-nav__link">
+        Черный список
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../schedules/" class="md-nav__link">
+        Графики активности
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../partners/" class="md-nav__link">
+        Клиенты агентов
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../communications/" class="md-nav__link">
+        Загрузка коммуникаций
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../persons/" class="md-nav__link">
+        Персона/Визитор
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Параметры запроса
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Параметры ответа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON структура запроса
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json_1" class="md-nav__link">
+    JSON структура ответа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Список возвращаемых ошибок
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Редактирование пула номеров</h1>
+                
+                <nav>
+<a href="../../Sites/new_lk">Сайты </a> >
+Редактирование ПКТ
+</nav>
+
+<table>
+<thead>
+<tr>
+<th align="left">Метод</th>
+<th align="left"><code>update.call_tracking_rule</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Описание</td>
+<td align="left">Редактирование ПКТ</td>
+</tr>
+<tr>
+<td align="left">Кому доступен</td>
+<td align="left">Агент, Клиент</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">Параметры запроса</h3>
+<table>
+   <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Обязательный</th>
+      <th>Допустимые значения</th>
+      <th>Описание</th>
+   </tr>
+   <tr>
+      <td><code>access_token</code></td>
+      <td>string</td>
+      <td>да</td>
+      <td></td>
+      <td>Ключ сессии аутентификации</td>
+   </tr>
+   <tr>
+      <td><code>user_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td> Уникальный идентификатор пользователя клиента агента от имени которого делается запрос
+           <blockquote>Является обязательным для агента</blockquote> Для получения списка пользователей клиента необходимо использовать метод  <a href="../../Partners/#get_customer_user">"get.customer_users"</a>
+      </td>
+   </tr>
+   <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>Уникальный идентификатор ПКТ</td>
+   </tr>
+   <tr>
+      <td><code>name</code></td>
+      <td>string</td>
+      <td>нет</td>
+      <td></td>
+      <td>Название ПКТ</td>
+   </tr>
+   <tr>
+      <td><code>is_named_by_user</code></td>
+      <td>boolean</td>
+      <td>Обязательно, если передан параметр name</td>
+      <td></td>
+      <td>Признак, что название введено ручную</td>
+   </tr>
+   <tr>
+      <td><code>rule_type</code></td>
+      <td>enum</td>
+      <td>нет</td>
+      <td>site_calls, external_area</td>
+      <td>Вид ПКТ.  <code>site_calls</code> - Звонки с сайтов. <code>external_area</code> - Звонки со сторонних площадок. <code>manual_settings</code> - Ручная настройка.</td>
+   </tr>
+   <tr>
+      <td><code>reserve_phone_numbers_time</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>Время резерва динамического номера за посетителем в минутах (от 5 до 10080)</td>
+   </tr>
+   <tr>
+      <td><code>call_tracking_type</code></td>
+      <td>enum</td>
+      <td>нет</td>
+      <td>static, dynamic</td>
+      <td>Тип коллтрекинга. Для <code>rule_type</code> = external_area, допустимо только значение static</td>
+   </tr>
+    <tr>
+      <td><code>state</code></td>
+      <td>enum</td>
+      <td>нет</td>
+      <td>active, draft</td>
+      <td>Состояние ПКТ</td>
+    </tr>
+    <tr>
+      <td><code>is_all_traffic</code></td>
+      <td>boolean</td>
+      <td>нет</td>
+      <td>ture, false</td>
+      <td>Использовать данное ПКТ для всего траффика</td>
+    </tr>
+    <tr>
+      <td><code>sources</code></td>
+      <td>array</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Список источников, для которых используется данное ПКТ. Может присутствовать в запросе только если <code>call_tracking_type</code> = dynamic
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_channel_id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор канала источника. Метод получение списка существующих каналов: <a href="../../constructor#get_sources_channels"> "get.get_sources_channels" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_group_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор группы источника. Метод получение списка существующих групп: <a href="../../constructor#get_sources_groups"> "get.get_sources_groups" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор источника. Метод получение списка существующих Источников: <a href="../../constructor#get_sources"> "get.get_sources" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>conditions</code></td>
+      <td>array</td>
+      <td>нет</td>
+      <td></td>
+      <td>Условия для определения ПКТ, допустимо только для <code>rule_type</code> = manual_settings</td>
+    </tr>
+    <tr>
+      <td><code>filters</code></td>
+      <td>array</td>
+      <td></td>
+      <td></td>
+      <td>Выражение, может содержать в себе как простые фильтры, так и дерево фильтров</td>
+    </tr>
+    <tr>
+      <td><code>field</code></td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Список допустимых значений и возможных операторов см. в таблице <a href="../get_number_pool_condition_parameters">"Список параметров и их операторов</td>
+    </tr>
+    <tr>
+      <td><code>operator</code></td>
+      <td>enum</td>
+      <td></td>
+      <td></td>
+      <td>Список допустимых значений и возможных операторов см. в таблице <a href="../get_number_pool_condition_parameters">"Список параметров и их операторов"</a></td>
+    </tr>
+    <tr>
+      <td><code>external_replacement_settings</code></td>
+      <td>array</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Настройка статических номеров. Может присутствовать в запросе только если <code>call_tracking_type</code> = static и <code>rule_type</code> = site_calls
+      </td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор блока с настройкой.
+      </td>
+    </tr>
+    <tr>
+      <td><code>replacement_phones_groups</code></td>
+      <td>array</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор группы телефонных номеров и сайтов для замены на номера коллтрекинга.
+      </td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор группы телефонных номеров. Метод получение списка существующих групп: <a href="../../site#get_replacement_phones_groups"> "get.replacement_phones_groups" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>site_id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор сайта.
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор источника. Метод получение списка существующих Источников: <a href="../../constructor#get_sources"> "get.get_sources" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>static_phone_id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>Номер для статического коллтрекинга.</td>
+    </tr>
+    <tr>
+      <td><code>child_customer_id</code></td>
+      <td>number</td>
+      <td></td>
+      <td></td>
+      <td>Идентификатор клиента агента, для которого заведен сайт. Метод получение списка клиентов: <a href="../partner#get_._customers"> "get.customers" </a></td>
+    </tr>
+    <tr>
+      <td><code>call_processing_rule_group_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Группа правил обработки звонков.</td>
+    </tr>
+    <tr>
+      <td><code>custom_redirection_phone</code></td>
+      <td>string</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Номер для переадресации.</td>
+    </tr>
+    <tr>
+      <td><code>redirection_phone</code></td>
+      <td>object</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Номер для переадресации.</td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Идентификатор номера телефона. Метод для получения номеров <a href="../../vn#get_virtual_numbers"> "get.virtual_numbers"</td>
+    </tr>
+    <tr>
+      <td><code>child_customer_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Идентификатор филиала, которому принадлежит номер.  Метод для получения клиентов агента comagic-api/agent/agent_app</td>
+    </tr>
+    <tr>
+      <td><code>scenario_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Сценарий переадресации.</td>
+    </tr>
+    <tr>
+      <td><code>employee_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Сотрудник, который будет обрабатывать звонки.</td>
+    </tr>
+    <tr>
+      <td><code>static_replacement_phones_settings</code></td>
+      <td>array</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Настройка статических номеров. Может присутствовать в запросе только если <code>call_tracking_type</code> = static и <code>rule_type</code> = site_calls ИЛИ manual_settings
+      </td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор блока с настройкой.
+      </td>
+    </tr>
+    <tr>
+      <td><code>replacement_phones_groups</code></td>
+      <td>array</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор группы телефонных номеров и сайтов для замены на номера коллтрекинга.
+      </td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор группы телефонных номеров. Метод получение списка существующих групп: <a href="../../site#get_replacement_phones_groups"> "get.replacement_phones_groups" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>site_id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор сайта.
+      </td>
+    </tr>
+    <tr>
+      <td><code>source</code></td>
+      <td>object</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Список источников, на которые настроена гарантия.
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_channel_id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор канала источника. Метод получение списка существующих каналов: <a href="../../constructor#get_sources_channels"> "get.get_sources_channels" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_group_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор группы источника. Метод получение списка существующих групп: <a href="../../constructor#get_sources_groups"> "get.get_sources_groups" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор источника. Метод получение списка существующих Источников: <a href="../../constructor#get_sources"> "get.get_sources" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>default_source_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор источника для отображения в отчете. Метод получение списка существующих Источников: <a href="../../constructor#get_sources"> "get.get_sources" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>static_phone_id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>Номер для статического коллтрекинга.</td>
+    </tr>
+    <tr>
+      <td><code>call_processing_rule_group_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Группа правил обработки звонков.</td>
+    </tr>
+    <tr>
+      <td><code>custom_redirection_phone</code></td>
+      <td>string</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Номер для переадресации.</td>
+    </tr>
+    <tr>
+      <td><code>redirection_phone</code></td>
+      <td>object</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Номер для переадресации.</td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Идентификатор номера телефона. Метод для получения номеров <a href="../../vn#get_virtual_numbers"> "get.virtual_numbers"</td>
+    </tr>
+    <tr>
+      <td><code>child_customer_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Идентификатор филиала, которому принадлежит номер.  Метод для получения клиентов агента comagic-api/agent/agent_app</td>
+    </tr>
+    <tr>
+      <td><code>scenario_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Сценарий переадресации.</td>
+    </tr>
+    <tr>
+      <td><code>employee_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Сотрудник, который будет обрабатывать звонки.</td>
+    </tr>
+    <tr>
+      <td><code>dynamic_replacement_phones_settings</code></td>
+      <td>array</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Настройки групп телефонных номеров для замены на номера динамического коллтрекинга. Может присутствовать в запросе только если <code>call_tracking_type</code> = dynamic
+      </td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор блока с настройкой.
+      </td>
+    </tr>
+    <tr>
+      <td><code>replacement_phones_groups</code></td>
+      <td>array</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор группы телефонных номеров и сайтов для замены на номера коллтрекинга.
+      </td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор группы телефонных номеров. Метод получение списка существующих групп: <a href="../../site#get_replacement_phones_groups"> "get.replacement_phones_groups" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>site_id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор сайта.
+      </td>
+    </tr>
+    <tr>
+      <td><code>prefix</code></td>
+      <td>string</td>
+      <td>нет</td>
+      <td></td>
+      <td>Префиск номеров коллтрекинга. Обязателен и заполняется только, если is_dynamic = true</td>
+    </tr>
+    <tr>
+      <td><code>virtual_numbers_count</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Минимальное значение = 1</td>
+      <td>Общее количество номеров коллтрекинга в одном блоке. Необходимое количество номеров будет докуплено.</td>
+    </tr>
+    <tr>
+      <td><code>visitors_count</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Минимальное значение = 1</td>
+      <td>Количество посещений в сутки. Обязателен и заполняется только, если is_dynamic = true</td>
+    </tr>
+    <tr>
+      <td><code>call_processing_rule_group_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Группа правил обработки звонков.</td>
+    </tr>
+    <tr>
+      <td><code>custom_redirection_phone</code></td>
+      <td>string</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Номер для переадресации.</td>
+    </tr>
+    <tr>
+      <td><code>redirection_phone</code></td>
+      <td>object</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Номер для переадресации.</td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Идентификатор номера телефона. Метод для получения номеров <a href="../../vn#get_virtual_numbers"> "get.virtual_numbers"</td>
+    </tr>
+    <tr>
+      <td><code>child_customer_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Идентификатор филиала, которому принадлежит номер.  Метод для получения клиентов агента comagic-api/agent/agent_app</td>
+    </tr>
+    <tr>
+      <td><code>scenario_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Сценарий переадресации.</td>
+    </tr>
+    <tr>
+      <td><code>employee_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Сотрудник, который будет обрабатывать звонки.</td>
+    </tr>
+    <tr>
+      <td><code>sources_bundle_settings</code></td>
+      <td>array</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Гарантия на источник, позволяет сохранить источник при звонке на статические номера. Может присутствовать в запросе только если <code>call_tracking_type</code> = dynamic
+      </td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор блока с настройкой.
+      </td>
+    </tr>
+    <tr>
+      <td><code>replacement_phones_groups</code></td>
+      <td>array</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор группы телефонных номеров и сайтов для замены на номера коллтрекинга.
+      </td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор группы телефонных номеров. Метод получение списка существующих групп: <a href="../../site#get_replacement_phones_groups"> "get.replacement_phones_groups" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>site_id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор сайта.
+      </td>
+    </tr>
+    <tr>
+      <td><code>source</code></td>
+      <td>object</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Список источников, на которые настроена гарантия.
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_channel_id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>
+        Идентификатор канала источника. Метод получение списка существующих каналов: <a href="../../constructor#get_sources_channels"> "get.get_sources_channels" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_group_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор группы источника. Метод получение списка существующих групп: <a href="../../constructor#get_sources_groups"> "get.get_sources_groups" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>source_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор источника. Метод получение списка существующих Источников: <a href="../../constructor#get_sources"> "get.get_sources" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>default_source_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>
+        Идентификатор источника для отображения в отчете. Метод получение списка существующих Источников: <a href="../../constructor#get_sources"> "get.get_sources" </a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>static_phone_id</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>Номер для статического коллтрекинга.</td>
+    </tr>
+    <tr>
+      <td><code>call_processing_rule_group_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Группа правил обработки звонков.</td>
+    </tr>
+    <tr>
+      <td><code>custom_redirection_phone</code></td>
+      <td>string</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Номер для переадресации.</td>
+    </tr>
+    <tr>
+      <td><code>redirection_phone</code></td>
+      <td>object</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Номер для переадресации.</td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Идентификатор номера телефона. Метод для получения номеров <a href="../../vn#get_virtual_numbers"> "get.virtual_numbers"</td>
+    </tr>
+    <tr>
+      <td><code>child_customer_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Идентификатор филиала, которому принадлежит номер.  Метод для получения клиентов агента comagic-api/agent/agent_app</td>
+    </tr>
+    <tr>
+      <td><code>scenario_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Сценарий переадресации.</td>
+    </tr>
+    <tr>
+      <td><code>employee_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td>Одно из значений
+           <li><code>custom_redirection_phone</code></li>
+           <li><code>redirection_phone</code></li>
+           <li><code>call_processing_rule_group_id</code></li>
+           <li><code>scenario_id</code></li>
+           <li><code>employee_id</code></li>
+      </td>
+      <td>Сотрудник, который будет обрабатывать звонки.</td>
+    </tr>
+</table>
+
+<h3 id="_2">Параметры ответа</h3>
+<table>
+  <tbody>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Допустимые значения</th>
+      <th>Фильтрация</th>
+      <th>Сортировка</th>
+      <th>Описание</th>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>number</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Уникальный идентификатор пула номеров</td>
+    </tr>
+</table>
+
+<h3 id="json">JSON структура запроса</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;b-MF31Xhu62QnxWtqeWcV11&quot;,
+  &quot;method&quot;: &quot;update.call_tracking_rule&quot;,
+  &quot;params&quot;: {
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;is_named_by_user&quot;: &quot;boolean&quot;,
+    &quot;rule_type&quot;: &quot;string&quot;,
+    &quot;call_tracking_type&quot;: &quot;string&quot;,
+    &quot;is_all_traffic&quot;: &quot;boolean&quot;,
+    &quot;state&quot;: &quot;string&quot;,
+    &quot;sources&quot;: [
+      {
+        &quot;source_id&quot;: &quot;number&quot;,
+        &quot;source_group_id&quot;: &quot;number&quot;,
+        &quot;source_channel_id&quot;: &quot;number&quot;
+      }
+    ],
+    &quot;dynamic_replacement_phones_settings&quot;: [
+      {
+        &quot;id&quot;: &quot;number&quot;,
+        &quot;replacement_phones_groups&quot;: [
+          {
+            &quot;id&quot;: &quot;number&quot;,
+            &quot;site_id&quot;: &quot;number&quot;
+          },
+          {
+            &quot;id&quot;: &quot;number&quot;,
+            &quot;site_id&quot;: &quot;number&quot;
+          }
+        ],
+        &quot;custom_redirection_phone&quot;: &quot;string&quot;,
+        &quot;redirection_phone&quot;: {
+          &quot;id&quot;: &quot;number&quot;,
+          &quot;child_customer_id&quot;: &quot;number&quot;
+        },
+        &quot;call_processing_rule_group_id&quot;: &quot;number&quot;,
+        &quot;scenario_id&quot;: &quot;number&quot;,
+        &quot;employee_id&quot;: &quot;number&quot;,
+        &quot;prefix&quot;: &quot;string&quot;,
+        &quot;visitors_count&quot;: &quot;number&quot;,
+        &quot;virtual_numbers_count&quot;: &quot;number&quot;
+      }
+    ],
+    &quot;static_replacement_phones_settings&quot;: [
+      {
+        &quot;id&quot;: &quot;number&quot;,
+        &quot;replacement_phones_groups&quot;: [
+          {
+            &quot;id&quot;: &quot;number&quot;,
+            &quot;site_id&quot;: &quot;number&quot;
+          }
+        ],
+        &quot;custom_redirection_phone&quot;: &quot;string&quot;,
+        &quot;redirection_phone&quot;: {
+          &quot;id&quot;: &quot;number&quot;,
+          &quot;child_customer_id&quot;: &quot;number&quot;
+        },
+        &quot;call_processing_rule_group_id&quot;: &quot;number&quot;,
+        &quot;scenario_id&quot;: &quot;number&quot;,
+        &quot;employee_id&quot;: &quot;number&quot;,
+        &quot;static_phone_id&quot;: &quot;number&quot;,
+        &quot;source&quot;: {
+          &quot;source_id&quot;: &quot;number&quot;,
+          &quot;source_group_id&quot;: &quot;number&quot;,
+          &quot;source_channel_id&quot;: &quot;number&quot;
+        },
+        &quot;default_source_id&quot;: &quot;number&quot;
+      }
+    ],
+    &quot;external_replacement_settings&quot;: [
+      {
+        &quot;id&quot;: &quot;number&quot;,
+        &quot;replacement_phones_groups&quot;: [
+          {
+            &quot;id&quot;: &quot;number&quot;,
+            &quot;site_id&quot;: &quot;number&quot;
+          }
+        ],
+        &quot;custom_redirection_phone&quot;: &quot;string&quot;,
+        &quot;redirection_phone&quot;: {
+          &quot;id&quot;: &quot;number&quot;,
+          &quot;child_customer_id&quot;: &quot;number&quot;
+        },
+        &quot;call_processing_rule_group_id&quot;: &quot;number&quot;,
+        &quot;scenario_id&quot;: &quot;number&quot;,
+        &quot;employee_id&quot;: &quot;number&quot;,
+        &quot;static_phone_id&quot;: &quot;number&quot;,
+        &quot;child_customer_id&quot;: &quot;number&quot;,
+        &quot;source_id&quot;: &quot;number&quot;,
+        &quot;child_customer_id&quot;: &quot;number&quot;
+      }
+    ],
+    &quot;sources_bundle_settings&quot;: [
+      {
+        &quot;id&quot;: &quot;number&quot;,
+        &quot;replacement_phones_groups&quot;: [
+          {
+            &quot;id&quot;: &quot;number&quot;,
+            &quot;site_id&quot;: &quot;number&quot;
+          }
+        ],
+        &quot;custom_redirection_phone&quot;: &quot;string&quot;,
+        &quot;redirection_phone&quot;: {
+          &quot;id&quot;: &quot;number&quot;,
+          &quot;child_customer_id&quot;: &quot;number&quot;
+        },
+        &quot;call_processing_rule_group_id&quot;: &quot;number&quot;,
+        &quot;scenario_id&quot;: &quot;number&quot;,
+        &quot;employee_id&quot;: &quot;number&quot;,
+        &quot;static_phone_id&quot;: &quot;number&quot;,
+        &quot;source&quot;: {
+          &quot;source_id&quot;: &quot;number&quot;,
+          &quot;source_group_id&quot;: &quot;number&quot;,
+          &quot;source_channel_id&quot;: &quot;number&quot;
+        },
+        &quot;default_source_id&quot;: &quot;number&quot;
+      }
+    ],
+    &quot;reserve_phone_numbers_time&quot;: &quot;number&quot;,
+    &quot;conditions&quot;: {
+    &quot;filters&quot;: [
+      {
+      &quot;filters&quot;: [
+        {
+        &quot;filters&quot;: [
+          {
+          &quot;field&quot;: &quot;string&quot;,
+          &quot;operator&quot;: &quot;string&quot;,
+          &quot;value&quot;: &quot;string&quot;
+          },
+          {
+          &quot;field&quot;: &quot;string&quot;,
+          &quot;operator&quot;: &quot;string&quot;,
+          &quot;value&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;condition&quot;: &quot;string&quot;
+        },
+        {
+        &quot;field&quot;: &quot;string&quot;,
+        &quot;operator&quot;: &quot;string&quot;,
+        &quot;value&quot;: &quot;string&quot;
+        }
+      ],
+      &quot;condition&quot;: &quot;string&quot;
+      },
+      {
+      &quot;field&quot;: &quot;string&quot;,
+      &quot;operator&quot;: &quot;string&quot;,
+      &quot;value&quot;: &quot;string&quot;
+      }
+    ],
+    &quot;condition&quot;: &quot;string&quot;
+    }
+  }
+}
+</code></pre>
+<h3 id="json_1">JSON структура ответа</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;result&quot;: {
+      &quot;data&quot;: {
+          &quot;id&quot;: &quot;number&quot;
+      },
+      &quot;metadata&quot;: &quot;object&quot;
+  }
+}
+</code></pre>
+<h3 id="_3">Список возвращаемых ошибок</h3>
+<p>Смотрим раздел <a href="../index.md#_changeErrors">"Список ошибок для методов с глаголом update"</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../../js/init.js"></script>
+      
+    
+  </body>
+</html>
