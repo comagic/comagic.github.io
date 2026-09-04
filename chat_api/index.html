@@ -1,0 +1,2931 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>CHAT API</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chat-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="CHAT API" class="md-header__button md-logo" aria-label="CHAT API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CHAT API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chat API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="CHAT API" class="md-nav__button md-logo" aria-label="CHAT API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    CHAT API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chat API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Chat API
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Соглашения 
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Управление адаптерами 
+  </a>
+  
+    <nav class="md-nav" aria-label="Управление адаптерами ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Список адаптеров 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Создание адаптера 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Редактирование адаптера 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Удаление адаптера 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Каналы чатов 
+  </a>
+  
+    <nav class="md-nav" aria-label="Каналы чатов ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Список каналов 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Подключение адаптера 
+  </a>
+  
+    <nav class="md-nav" aria-label="Подключение адаптера ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Список подключений 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    Создание подключения 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    Изменение подключения 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    Удаление подключения 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat-api_1" class="md-nav__link">
+    Chat API 
+  </a>
+  
+    <nav class="md-nav" aria-label="Chat API ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    Сущности
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-api_2" class="md-nav__link">
+    Аутентификация адаптера в Chat API 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-api_3" class="md-nav__link">
+    Методы Chat API 
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы Chat API ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    Создание чата 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    Завершение чата 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    Трансфер чата 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    Отправка сообщения 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    Добавление ресурса 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    Получение данных ресурса 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    Обратные вызовы 
+  </a>
+  
+    <nav class="md-nav" aria-label="Обратные вызовы ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    Создание аккаунта 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    Изменение аккаунта 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    Удаление аккаунта 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    Создание канала 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    Изменение канала 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    Удаление канала 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    Новый чат 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    Обновление чата 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    Завершение чата 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    Закрепление чата за оператором 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    Новое сообщение 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    Обновление сообщения 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    Изменение статуса сообщения 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    Обновление информации о посетителе 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v1-v2" class="md-nav__link">
+    Переход с версии обратного вызова v1 на v2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#waba" class="md-nav__link">
+    Работа с каналом типа waba 
+  </a>
+  
+    <nav class="md-nav" aria-label="Работа с каналом типа waba ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    Отправка сообщения с использованием шаблона
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    Примеры 
+  </a>
+  
+    <nav class="md-nav" aria-label="Примеры ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    Настройка 
+  </a>
+  
+    <nav class="md-nav" aria-label="Настройка ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    Получение токена аутентификации 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    Создание адаптера 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    Получение списка подключенных в аккаунте каналов чатов 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    Подключение канала 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    Использование адаптера 
+  </a>
+  
+    <nav class="md-nav" aria-label="Использование адаптера ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    Получение токена адаптера 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    Создание чата 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    Отправка сообщения в чат
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    История изменений 
+  </a>
+  
+    <nav class="md-nav" aria-label="История изменений ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1100-2025-05-15" class="md-nav__link">
+    1.10.0 (2025-05-15)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#190-2025-04-11" class="md-nav__link">
+    1.9.0 (2025-04-11)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#180-2025-03-20" class="md-nav__link">
+    1.8.0 (2025-03-20)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#170-2024-12-09" class="md-nav__link">
+    1.7.0 (2024-12-09)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#160-2024-10-01" class="md-nav__link">
+    1.6.0 (2024-10-01)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#151-2024-09-26" class="md-nav__link">
+    1.5.1 (2024-09-26)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#150-2024-04-11" class="md-nav__link">
+    1.5.0 (2024-04-11)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#140-2023-09-18" class="md-nav__link">
+    1.4.0 (2023-09-18)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#130-2023-09-18" class="md-nav__link">
+    1.3.0 (2023-09-18)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#120-2023-09-14" class="md-nav__link">
+    1.2.0 (2023-09-14)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-2023-09-13" class="md-nav__link">
+    1.1.0 (2023-09-13)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#100-2023-09-12" class="md-nav__link">
+    1.0.0 (2023-09-12)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Соглашения 
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Управление адаптерами 
+  </a>
+  
+    <nav class="md-nav" aria-label="Управление адаптерами ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Список адаптеров 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Создание адаптера 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Редактирование адаптера 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Удаление адаптера 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Каналы чатов 
+  </a>
+  
+    <nav class="md-nav" aria-label="Каналы чатов ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Список каналов 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Подключение адаптера 
+  </a>
+  
+    <nav class="md-nav" aria-label="Подключение адаптера ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Список подключений 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    Создание подключения 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    Изменение подключения 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    Удаление подключения 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat-api_1" class="md-nav__link">
+    Chat API 
+  </a>
+  
+    <nav class="md-nav" aria-label="Chat API ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    Сущности
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-api_2" class="md-nav__link">
+    Аутентификация адаптера в Chat API 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-api_3" class="md-nav__link">
+    Методы Chat API 
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы Chat API ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    Создание чата 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    Завершение чата 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    Трансфер чата 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    Отправка сообщения 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    Добавление ресурса 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    Получение данных ресурса 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    Обратные вызовы 
+  </a>
+  
+    <nav class="md-nav" aria-label="Обратные вызовы ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    Создание аккаунта 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    Изменение аккаунта 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    Удаление аккаунта 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    Создание канала 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    Изменение канала 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    Удаление канала 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    Новый чат 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    Обновление чата 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    Завершение чата 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    Закрепление чата за оператором 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    Новое сообщение 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    Обновление сообщения 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    Изменение статуса сообщения 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    Обновление информации о посетителе 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v1-v2" class="md-nav__link">
+    Переход с версии обратного вызова v1 на v2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#waba" class="md-nav__link">
+    Работа с каналом типа waba 
+  </a>
+  
+    <nav class="md-nav" aria-label="Работа с каналом типа waba ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    Отправка сообщения с использованием шаблона
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    Примеры 
+  </a>
+  
+    <nav class="md-nav" aria-label="Примеры ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    Настройка 
+  </a>
+  
+    <nav class="md-nav" aria-label="Настройка ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    Получение токена аутентификации 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    Создание адаптера 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    Получение списка подключенных в аккаунте каналов чатов 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    Подключение канала 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    Использование адаптера 
+  </a>
+  
+    <nav class="md-nav" aria-label="Использование адаптера ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    Получение токена адаптера 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    Создание чата 
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    Отправка сообщения в чат
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    История изменений 
+  </a>
+  
+    <nav class="md-nav" aria-label="История изменений ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1100-2025-05-15" class="md-nav__link">
+    1.10.0 (2025-05-15)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#190-2025-04-11" class="md-nav__link">
+    1.9.0 (2025-04-11)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#180-2025-03-20" class="md-nav__link">
+    1.8.0 (2025-03-20)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#170-2024-12-09" class="md-nav__link">
+    1.7.0 (2024-12-09)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#160-2024-10-01" class="md-nav__link">
+    1.6.0 (2024-10-01)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#151-2024-09-26" class="md-nav__link">
+    1.5.1 (2024-09-26)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#150-2024-04-11" class="md-nav__link">
+    1.5.0 (2024-04-11)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#140-2023-09-18" class="md-nav__link">
+    1.4.0 (2023-09-18)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#130-2023-09-18" class="md-nav__link">
+    1.3.0 (2023-09-18)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#120-2023-09-14" class="md-nav__link">
+    1.2.0 (2023-09-14)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-2023-09-13" class="md-nav__link">
+    1.1.0 (2023-09-13)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#100-2023-09-12" class="md-nav__link">
+    1.0.0 (2023-09-12)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="chat-api">Chat API</h1>
+<p>Краткое руководство по ChatAPI.</p>
+<ul>
+<li><a href="#agreements">Соглашения</a></li>
+<li><a href="#adapters">Управление адаптерами</a></li>
+<li><a href="#listAdapters">Список адаптеров</a></li>
+<li><a href="#createAdapter">Создание адаптера</a></li>
+<li><a href="#updateAdapter">Редактирование адаптера</a></li>
+<li><a href="#deleteAdapter">Удаление адаптера</a></li>
+<li><a href="#channels">Каналы чатов</a></li>
+<li><a href="#listChannels">Список каналов</a></li>
+<li><a href="#accounts">Подключение адаптера</a></li>
+<li><a href="#listAccounts">Список подключений</a></li>
+<li><a href="#createAccount">Создание подключения</a></li>
+<li><a href="#updateAccount">Изменение подключения</a></li>
+<li><a href="#deleteAccount">Удаление подключения</a></li>
+<li><a href="#api">Chat API</a></li>
+<li><a href="#adapterAuth">Аутентификация адаптера в Chat API</a></li>
+<li><a href="#apiMethods">Методы Chat API</a><ul>
+<li><a href="#apiChat">Создание чата</a> </li>
+<li><a href="#apiChatClose">Завершение чата</a></li>
+<li><a href="#apiChatTransfer">Трансфер чата</a></li>
+<li><a href="#apiMessage">Отправка сообщения</a> </li>
+<li><a href="#apiUploadResource">Добавление ресурса</a></li>
+<li><a href="#apiDownloadResource">Получение данных ресурса</a></li>
+</ul>
+</li>
+<li><a href="#apiWebhooks">Обратные вызовы</a><ul>
+<li><a href="#webhooksAccount">Создание аккаунта</a></li>
+<li><a href="#webhooksUpdateAccount">Изменение аккаунта</a>  </li>
+<li><a href="#webhooksDeleteAccount">Удаление аккаунта</a> </li>
+<li><a href="#webhookChannel">Создание канала</a></li>
+<li><a href="#webhooksUpdateChannel">Изменение канала</a> </li>
+<li><a href="#webhooksDeleteChannel">Удаление канала</a>  </li>
+<li><a href="#webhookChat">Новый чат</a></li>
+<li><a href="#webhookChatUpdate">Обновление чата</a></li>
+<li><a href="#webhooksChatClose">Завершение чата</a></li>
+<li><a href="#webhooksChatOperatorUpdate">Закрепление чата за оператором</a></li>
+<li><a href="#webhookMessage">Новое сообщение</a></li>
+<li><a href="#webhookMessageUpdate">Обновление сообщения</a></li>
+<li><a href="#webhooksMessageStatusUpdate">Изменение статуса сообщения</a></li>
+<li><a href="#webhooksVisitorCardUpdate">Обновление информации о посетителе</a></li>
+</ul>
+</li>
+<li><a href="#apiChannelWaba">Работа с каналом типа <code>waba</code></a></li>
+<li><a href="#examples">Примеры</a></li>
+<li><a href="#changelog">История изменений</a></li>
+</ul>
+<h2 id="_1">Соглашения <a name="agreements"></a></h2>
+<ul>
+<li><em>Личный кабинет</em> - веб-приложение находящееся в домене go.comagic.ru или go.uiscom.ru</li>
+<li><em>Рабочее место оператора (РМО)</em> - приложение, позволяющее сотрудникам вести диалоги с клиентами.  </li>
+<li><em>Адаптер</em> - пользовательский сервис реализующей при помощи вызовов методов <em>Chat API</em> и обработки обратных вызовов собственную реализацию <em>РМО</em>.</li>
+<li><em>Канал чатов</em> - подключенный канал чатов (Чат на сайте, Telegram, Viber, и т.д.) в аккаунте клиента.</li>
+<li><em>Аккаунт адаптера</em> - подключение адаптера клиентом личного кабинета</li>
+<li><em>Канал адаптера</em> - подключение канала чата в адаптере</li>
+<li><em>Обратный вызов</em> - HTTP-запрос, который ChatAPI отправляет адаптеру в случае изменения сущностей, происходящих без непосредственного участия самого адаптера (например создание чата или отправка сообщения посетителем, отправка системных сообщений и прочее).  </li>
+</ul>
+<h2 id="_2">Управление адаптерами <a name="adapters"></a></h2>
+<p>Для начала работы необходимо зарегистрировать интеграционный адаптер. 
+Это можно сделать ~~через личный кабинет, либо~~ отправив запрос в основной API чатов, доступный по адресу https://chats-prod-logic.uiscom.ru/.
+Доступ к API имеют только авторизованные пользователи личного кабинета.
+Для получения аутентификационного токена необходимо отправить запрос</p>
+<pre><code>POST https://go.uiscom.ru/api/auth/json_rpc?method=login
+{
+  "jsonrpc": "2.0",
+  "id": "0",
+  "method": "login",
+  "params": {
+    "login": "username",
+    "password": "password",
+    "project":"uis2"
+  }
+}
+</code></pre>
+<blockquote>
+<p>В качестве значения атрибута <code>project</code> необходимо указывать <code>uis2</code>, если клиентский личный кабинет находится в домене <code>uiscom.ru</code>, или <code>comagic</code> в случае <code>comagic.ru</code>.  </p>
+</blockquote>
+<p>Аутентификация запросов в основном API чатов выполняется с использованием токена, переданного в заголовке.</p>
+<pre><code>POST https://chats-prod-logic.uiscom.ru/v1/
+Authorization: Bearer &lt;token&gt;
+</code></pre>
+<p>Адаптер в API представлен сущностью <code>Adapter</code></p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор адаптера</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>str</code></td>
+<td>Уникальная мнемоника адаптера, соответствует регулярному выражению <code>^[a-z0-9_]+$</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Название адаптера</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum</code></td>
+<td>Статус адаптера. Допустимые значения: <code>active</code>, <code>disabled</code></td>
+</tr>
+<tr>
+<td><code>supported_channel_types</code></td>
+<td><code>enum</code></td>
+<td>Список мнемоник каналов. Допустимые значения: <code>comagic</code>, <code>telegram</code>, <code>auto_ru</code>, <code>avito</code>, <code>realty_yandex</code>, <code>viber</code>, <code>telegram_private</code>, <code>whatsapp</code>, <code>waba</code>, <code>sms</code>, <code>email</code></td>
+</tr>
+<tr>
+<td><code>owner</code></td>
+<td><code>int</code></td>
+<td>Идентификатор владельца адаптера. Может принимать значение <code>null</code>, в этом случае адаптер является системным</td>
+</tr>
+<tr>
+<td><code>visibility_status</code></td>
+<td><code>enum</code></td>
+<td>Статус видимости адаптера, для пользовательских адаптеров принимает только значение <code>private</code></td>
+</tr>
+<tr>
+<td><code>login</code></td>
+<td><code>str</code></td>
+<td>Логин для авторизации адаптера</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><code>str</code></td>
+<td>Пароль для авторизации адаптера</td>
+</tr>
+<tr>
+<td><code>webhook_url</code></td>
+<td><code>str</code></td>
+<td>Адрес для обратных вызовов из Chat API</td>
+</tr>
+<tr>
+<td><code>webhook_version</code></td>
+<td><code>str</code></td>
+<td>Версия обратных вызовов. Доступные версии: <code>v1</code>, <code>v2</code>; по-умолчанию используется версия <code>v2</code>.</td>
+</tr>
+<tr>
+<td><code>webhook_token</code></td>
+<td><code>str</code></td>
+<td>Токен для аутентификации Chat API используемый для обратных вызовов. Не допускается совместное использование с <code>webhook_auth</code>.<br/><br/><em>Данный атрибут является устаревшим и не рекомендуется к использованию.</em></td>
+</tr>
+<tr>
+<td><code>webhook_auth</code></td>
+<td><code>object</code></td>
+<td>Конфигурация аутентификации Chat API для обратных вызовов. Не допускается совместное использование с <code>webhook_token</code>.</td>
+</tr>
+<tr>
+<td><code>webhook_kwargs</code></td>
+<td><code>dict[str, Any]</code></td>
+<td>Ассоциативный массив с дополнительными аргументы для обратных вызовов. Допустимые ключи <code>timeout</code> со значением типа <code>float</code>, для управления временем ожидания ответа от адаптера; ассоциативный массив дополнительных заголовков <code>headers</code>, вида <code>{"name": "value"}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Объект <code>webhook_auth</code> задает способ аутентификации для обратных вызовов с использованием постоянного токена или пары логин-пароль.   </p>
+<p>Для аутентификации с постоянным токеном необходимо задать значение <code>webhook_auth</code> следующим образом:</p>
+<pre><code>{
+  &quot;type&quot;: &quot;Bearer&quot;,
+  &quot;token&quot;: &quot;string&quot;
+}
+</code></pre>
+<p>В этом случае все обратные вызовы будут содержать заголовок
+<code>Authorization: Bearer &lt;token&gt;</code>.</p>
+<p>Для использования пары логин-пароль значение <code>webhook_auth</code> задается следующим образом:</p>
+<pre><code>{
+  &quot;type&quot;: &quot;Basic&quot;,
+  &quot;login&quot;: &quot;string&quot;,
+  &quot;password&quot;: &quot;string&quot;
+}
+</code></pre>
+<p>В этом случае все обратные вызовы будут содержать заголовок <code>Authorization: Basic &lt;credentials&gt;</code>, где <code>credentials</code> это закодированная в Base64 пара <code>&lt;login&gt;:&lt;password&gt;</code>.</p>
+<h3 id="_3">Список адаптеров <a name="listAdapters"></a></h3>
+<pre><code>GET /v1/integration/adapter
+</code></pre>
+<p>Возвращает список сущностей типа <code>Adapter</code>, среди которых возвращаются как адаптеры, 
+добавленные пользователями, так и системные адаптеры. Отличительной особенностью 
+системных адаптеров является значение <code>null</code> в атрибуте <code>owner</code>. Управлять системными 
+адаптерами запрещено.</p>
+<h3 id="_4">Создание адаптера <a name="createAdapter"></a></h3>
+<pre><code>POST /v1/integration/adapter
+{
+  "type": "string",             
+  "name": "string",             
+  "login": "string", 
+  "password": "string",
+  "webhook_url": "string",
+  "webhook_version": "string",
+  "webhook_token": "string",
+  "webhook_auth": {
+    "type": "Bearer",
+    "token": "string",
+  },
+  "supported_channel_types": [  
+    "comagic",
+    "telegram",
+    "whatsapp"
+  ],
+}
+</code></pre>
+<p>В результате возвращается сущность <code>Adapter</code>.</p>
+<h3 id="_5">Редактирование адаптера <a name="updateAdapter"></a></h3>
+<pre><code>PATCH /v1/integration/adapter/{adapter_id}
+{
+  "name": "string",
+  "login": "string",
+  "password": "string",
+  "status": "active",
+  "webhook_url": "string",
+  "webhook_version": "string",
+  "webhook_token": "string",
+  "webhook_auth": {
+    "type": "Bearer",
+    "token": "string",
+  },
+  "webhook_kwargs": {},
+  "supported_channel_types": [
+    "comagic"
+  ]
+}
+</code></pre>
+<p>Метод позволяет менять следующие атрибуты сущности: <code>name</code>, <code>login</code>, <code>password</code>, <code>status</code>, <code>webhook_url</code>, <code>webhook_version</code>, <code>webhook_token</code>, <code>webhook_auth</code>, <code>supported_channel_types</code>.</p>
+<h3 id="_6">Удаление адаптера <a name="deleteAdapter"></a></h3>
+<pre><code>DELETE /v1/integration/adapter/{adapter_id}
+</code></pre>
+<p>Адаптер можно удалить только в том случае, если он не используется.</p>
+<h2 id="_7">Каналы чатов <a name="channels"></a></h2>
+<p>Сущность <code>Channel</code> представляющая подключенный канал чатов в аккаунте клиента.</p>
+<pre><code>{
+  "id": 0,
+  "type": "comagic",
+  "name": "string",
+  "is_removed": true,
+  "status": "string", 
+  "status_reason": "string"
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор канала</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>enum</code></td>
+<td>Мнемоника канала</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Название канала</td>
+</tr>
+<tr>
+<td><code>is_removed</code></td>
+<td><code>bool</code></td>
+<td>Флаг логического удаления</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum</code></td>
+<td>Статус</td>
+</tr>
+<tr>
+<td><code>status_reason</code></td>
+<td><code>str</code></td>
+<td>Причина смены статуса</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">Список каналов <a name="listChannels"></a></h3>
+<pre><code>GET /v1/integration/channel
+</code></pre>
+<p>Возвращает список сущностей типа <code>Channel</code>.</p>
+<h2 id="_9">Подключение адаптера <a name="accounts"></a></h2>
+<p>Подключение адаптера представлено сущностью <code>Account</code>.</p>
+<pre><code>{
+  "name": "string",
+  "adapter_id": 0,
+  "channels": [
+    0
+  ],
+  "context": {},
+  "id": 0,
+  "status": "string"
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор аккаунта</td>
+</tr>
+<tr>
+<td><code>adapter_id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор адаптера</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Название аккаунта</td>
+</tr>
+<tr>
+<td><code>channels</code></td>
+<td><code>list[int]</code></td>
+<td>Список идентификаторов <a href="#channels">каналов</a></td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td><code>dict[str, Any]</code></td>
+<td>Ассоциативный массив с дополнительными параметрами. Допустимые ключи: <code>is_chat_integration_scenario_created</code> со значение булева типа, позволяет управлять автоматическим прикреплением сценария "Переадресация в CRM" для подключаемых каналов</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum</code></td>
+<td>Статус подключения. Допустимые значения <code>active</code>, <code>disabled</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">Список подключений <a name="listAccounts"></a></h3>
+<pre><code>GET /v1/integration/account
+</code></pre>
+<p>Возвращает список сущностей типа <code>Account</code>.</p>
+<h3 id="_11">Создание подключения <a name="createAccount"></a></h3>
+<pre><code>POST /v1/integration/account
+{
+  "name": "string",
+  "adapter_id": 0,
+  "channels": [
+    0
+  ],
+  "context": {}
+}
+</code></pre>
+<h3 id="_12">Изменение подключения <a name="updateAccount"></a></h3>
+<pre><code>PATCH /v1/integration/account/{account_id}
+{
+  "name": "string",
+  "channels": [
+    0
+  ],
+  "context": {}
+}
+</code></pre>
+<p>Метод позволяет изменять следующие атрибуты сущности: <code>name</code>, <code>channels</code>, <code>context</code>.</p>
+<h3 id="_13">Удаление подключения <a name="deleteAccount"></a></h3>
+<pre><code>DELETE /v1/integration/account/{account_id}
+</code></pre>
+<h2 id="chat-api_1">Chat API <a name="api"></a></h2>
+<p>Сервис доступен по адресу https://chat-integration-api-prod.uiscom.ru/</p>
+<h3 id="_14">Сущности</h3>
+<p><code>Account</code> - представляет подключение адаптера клиентом.</p>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "adapter_id": 0,
+  "client_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Уникальный идентификатор аккаунта</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Название аккаунта</td>
+</tr>
+<tr>
+<td><code>adapter_id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор адаптера</td>
+</tr>
+<tr>
+<td><code>client_id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор внутренней сущности, всегда принимает значение <code>1</code></td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td><code>dict[str, Any]</code></td>
+<td>Дополнительные параметры, всегда содержит ключ <code>app_id</code> с идентификатором клиента, подключившего адаптер</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum</code></td>
+<td>Статус адаптера. Возможные значения <code>active</code>, <code>disabled</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>Channel</code> - представляет подключение канала чата в аккаунте.</p>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "type": "comagic",
+  "account_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Уникальный идентификатор канала</td>
+</tr>
+<tr>
+<td><code>account_id</code></td>
+<td><code>int</code></td>
+<td>Уникальный идентификатор аккаунта</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Название канала</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>enum</code></td>
+<td>Мнемоника канала чатов. Возможные значения <code>comagic</code>, <code>telegram</code>, <code>auto_ru</code>, <code>avito</code>, <code>realty_yandex</code>, <code>viber</code>, <code>telegram_private</code>, <code>whatsapp</code>, <code>waba</code>, <code>sms</code>, <code>email</code></td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td><code>dict[str, Any]</code></td>
+<td>Дополнительные параметры. Всегда содержит ключи <code>app_id</code> с уникальным идентификатором клиента, выполнившего подключение, а так же <code>chat_channel_id</code> - уникальный идентификатор подлюченного канала чатов</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum</code></td>
+<td>Статус канала. Возможные значения <code>active</code>, <code>disabled</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="chat-api_2">Аутентификация адаптера в Chat API <a name="adapterAuth"></a></h3>
+<p>Все запросы к Chat API должны содержать заголовок <code>Authorization</code>:</p>
+<pre><code>Authorization: Bearer &lt;token&gt;
+</code></pre>
+<p>Для получения токена адаптер должен выполнить запрос: </p>
+<pre><code>POST /v1/adapter/login
+Content-Type: application/x-www-form-urlencoded
+
+username={adapter_login}&amp;password={adapter_password}
+</code></pre>
+<p>Ответ будет содержать токен, тип и unix-timestamp указывающий на окончание времени жизни токена:</p>
+<pre><code>{
+  "access_token": "string",
+  "token_type": "bearer"
+  "expires_at": 0,
+}
+</code></pre>
+<p>По истечении времени жизни токена требуется повторить процедуру аутентификации.</p>
+<h3 id="chat-api_3">Методы Chat API <a name="apiMethods"></a></h3>
+<h4 id="_15">Создание чата <a name="apiChat"></a></h4>
+<p>Создание чата из адаптера возможно только для каналов, позволяющих начать коммуникацию первым. 
+Данная функция поддерживается каналами следующих типов: <code>whatsapp</code>, <code>waba</code>, <code>telegram_private</code>, <code>sms</code>, <code>email</code>.</p>
+<pre><code>POST /v1/adapter/chat
+{
+  "account_id": 0,
+  "channel_id": 0,
+  "visitor_phone": "string",
+  "visitor_email": "string",
+  "visitor_username": "string",
+  "operator_id": 0,
+  "initiator": "operator",
+  "created_at": "2023-01-01T00:00:00.000Z"
+}
+</code></pre>
+<p>Описание сущности <code>Chat</code></p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор аккаунта</td>
+</tr>
+<tr>
+<td><code>channel_id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор канала</td>
+</tr>
+<tr>
+<td><code>operator_id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор оператора. Оператор должен быть заведен в личном кабинете и иметь соответствующие привилегии</td>
+</tr>
+<tr>
+<td><code>initiator</code></td>
+<td><code>enum</code></td>
+<td>Мнемоника инициатора. <br/>Возможные значения: <code>operator</code>, <code>visitor</code>, <code>autoinvite</code>, <code>chat_channel</code>. <br/>Допустимые значения: <code>operator</code></td>
+</tr>
+<tr>
+<td><code>visitor_phone</code></td>
+<td><code>Optional[str]</code></td>
+<td>Номер телефона пользователя, с которым будет вестись диалог (используется для каналов типа <code>whatsapp</code>, <code>waba</code>, <code>sms</code>, <code>telegram_private</code>)</td>
+</tr>
+<tr>
+<td><code>visitor_email</code></td>
+<td><code>Optional[str]</code></td>
+<td>Адрес электронной почты пользователя, с которым будет вестись диалог (используется для канала типа <code>email</code>)</td>
+</tr>
+<tr>
+<td><code>visitor_username</code></td>
+<td><code>Optional[str]</code></td>
+<td>Короткое имя пользователя, с которым будет вестись диалог, в формате <code>@username</code> (используется для канала типа <code>telegram_private</code>)</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>str</code></td>
+<td>Дата и время в формате <code>ISO 8601</code></td>
+</tr>
+</tbody>
+</table>
+<p>При создании чата обязательно должен быть передан один из атрибутов <code>visitor_phone</code>, <code>visitor_email</code> или <code>visitor_username</code>, в зависимости от типа канала, в котором инициализируется коммуникация.
+В ответе вернется отправленная сущность с атрибутами <code>chat_id</code>, являющимся идентификатором обращения, и <code>visitor_id</code>, являющимся идентификатором пользователя, с которым ведется диалог. Оба параметра в дальнейшем должны использоваться при отправке сообщений в чат.</p>
+<h4 id="_16">Завершение чата <a name="apiChatClose"></a></h4>
+<pre><code>POST /v1/adapter/chat/close
+{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "operator_id": 0,
+  "reason": "closed_by_timeout"
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reason</td>
+<td><code>enum</code></td>
+<td>Причина завершения. <br/>Возможные значения: <code>closed_by_timeout</code>, <code>invite_rejected</code>, <code>closed_by_operator</code>, <code>closed_by_visitor</code>, <code>visitor_banned</code>, <code>external_window_closed</code>, <code>visitor_disconnected</code>, <code>visitor_session_expired</code>, <code>closed_by_scenario</code>. <br/>Допустимые значения: <code>closed_by_operator</code></td>
+</tr>
+<tr>
+<td>operator_id</td>
+<td><code>int</code></td>
+<td>Идентификатор оператора. Параметр является опциональным, необходимо передавать его, если в значении параметра <code>reason</code> передается <code>closed_by_operator</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_17">Трансфер чата <a name="apiChatTransfer"></a></h4>
+<pre><code>POST /v1/adapter/chat/transfer
+{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "from_operator_id": 0,
+  "to_operator_id": 0
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from_operator_id</td>
+<td><code>int</code></td>
+<td>Идентификатор текущего оператора чата</td>
+</tr>
+<tr>
+<td>to_operator_id</td>
+<td><code>int</code></td>
+<td>Идентификатор оператора, на которого будет назначен чат</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_18">Отправка сообщения <a name="apiMessage"></a></h4>
+<p>Для передачи сообщения в чат нужно знать идентификатор чата <code>chat_id</code>, который может быть получен при <a href="#apiChat">создании чата</a> либо при получении <a href="#webhookChat">обратного вызова при создании чата</a>. </p>
+<pre><code>POST /v1/adapter/message
+{
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "operator_id": 0,
+  "reply_to_id": 0,
+  "text": "string",
+  "created_at": "2023-01-01T00:00:00.000Z",
+  "source": "system",
+  "resource": {
+    "id": 0,
+    "token": "string",
+    "type": "photo",
+    "name": "string",
+    "size": 0
+  }
+}
+</code></pre>
+<p>Описание сущности <code>Message</code></p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор аккаунта</td>
+</tr>
+<tr>
+<td><code>channel_id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор канала</td>
+</tr>
+<tr>
+<td><code>chat_id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор чата</td>
+</tr>
+<tr>
+<td><code>operator_id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор оператора</td>
+</tr>
+<tr>
+<td><code>reply_to_id</code></td>
+<td><code>int</code></td>
+<td>Опциональный идентификатор сообщения для цитирования</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td><code>str</code></td>
+<td>Текст сообщения</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>str</code></td>
+<td>Дата и время в формате <code>ISO 8601</code></td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>enum</code></td>
+<td>Мнемоника отправителя сообщения. Допустимые значения: <code>operator</code></td>
+</tr>
+<tr>
+<td><code>resource</code></td>
+<td><a href="#messageResource"><code>Resource</code></a></td>
+<td>Объект <a href="#messageResource"><code>Resource</code></a> с описанием ресурса (файла), прикрепленного к сообщению</td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td><code>Optional[dict[str, Any]]</code></td>
+<td>Опциональный объект с дополнительной информацией</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_19">Добавление ресурса <a name="apiUploadResource"></a></h3>
+<pre><code>POST /v1/adapter/resource
+Content-Type: multipart/form-data
+
+...
+</code></pre>
+<p>Форма должна содержать следующие атрибуты</p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор аккаунта</td>
+</tr>
+<tr>
+<td><code>channel_id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор канала</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>enum</code></td>
+<td>Тип ресурса. Возможные значения <code>photo</code>, <code>video</code>, <code>audio</code>, <code>voice</code>, <code>document</code></td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td><code>bytes</code></td>
+<td>Передаваемый файл</td>
+</tr>
+</tbody>
+</table>
+<p>В ответе возвращается сущность <code>Resource</code> <a name="messageResource"></a></p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор ресурса</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td><code>str</code></td>
+<td>Токен ресурса</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>enum</code></td>
+<td>Тип ресурса. Возможные значения <code>photo</code>, <code>video</code>, <code>audio</code>, <code>voice</code>, <code>document</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Название файла</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><code>int</code></td>
+<td>Размер файла в байтах</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_20">Получение данных ресурса <a name="apiDownloadResource"></a></h3>
+<pre><code>GET /v1/adapter/resource/{account_id}/{channel_id}/{resource_id}/{resource_token}/payload
+</code></pre>
+<h3 id="_21">Обратные вызовы <a name="webhooks"></a></h3>
+<p>Обратные вызовы отправляются на адрес <code>webhook_url</code>, указанный в настройках адаптера. При этом <code>webhook_url</code> используется как базовый URL: фактический адрес каждого обратного вызова формируется путём добавления к нему собственного пути, уникального для конкретного события или сущности (например, /account, /chat и т.д.). Данные для аутентификации передаются в заголовке <code>Authorization</code>:</p>
+<pre><code>Authorization: {Type} {Credentials}
+</code></pre>
+<p>В случае, когда при создании адаптера указан атрибут <code>webhook_token</code>, заголовок <code>Authorization</code> формируется следующим образом:</p>
+<pre><code>Authorization: Bearer {webhook_token}
+</code></pre>
+<h4 id="_22">Создание аккаунта <a name="webhooksAccount"></a></h4>
+<p>Метод: <code>POST</code>
+URL: <code>{webhook_url}/account</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v1</code>, <code>v2</code>  </p>
+</blockquote>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "adapter_id": 0,
+  "client_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<p>Ожидаемый код ответа: <code>200</code> или <code>204</code></p>
+<h4 id="_23">Изменение аккаунта <a name="webhooksUpdateAccount"></a></h4>
+<p>Метод: <code>PATCH</code>
+URL: <code>{webhook_url}/account/{account_id}</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v1</code>, <code>v2</code>  </p>
+</blockquote>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "adapter_id": 0,
+  "client_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<p>Ожидаемый код ответа: <code>200</code> или <code>204</code></p>
+<h4 id="_24">Удаление аккаунта <a name="webhooksDeleteAccount"></a></h4>
+<p>Метод: <code>DELETE</code>
+URL: <code>{webhook_url}/account/{account_id}</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v1</code>, <code>v2</code>  </p>
+</blockquote>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "adapter_id": 0,
+  "client_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<p>Ожидаемый код ответа: <code>200</code> или <code>204</code></p>
+<h4 id="_25">Создание канала <a name="webhookChannel"></a></h4>
+<p>Метод: <code>POST</code>
+URL: <code>{webhook_url}/channel</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v1</code>, <code>v2</code>  </p>
+</blockquote>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "type": "comagic",
+  "account_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<p>Ожидаемый код ответа: <code>200</code> или <code>204</code></p>
+<h4 id="_26">Изменение канала <a name="webhooksUpdateChannel"></a></h4>
+<p>Метод: <code>PATCH</code>
+URL: <code>{webhook_url}/channel/{channel_id}</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v1</code>, <code>v2</code>  </p>
+</blockquote>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "type": "comagic",
+  "account_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<p>Ожидаемый код ответа: <code>200</code> или <code>204</code></p>
+<h4 id="_27">Удаление канала <a name="webhooksDeleteChannel"></a></h4>
+<p>Метод: <code>DELETE</code>
+URL: <code>{webhook_url}/channel/{channel_id}</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v1</code>, <code>v2</code>  </p>
+</blockquote>
+<pre><code>{
+  "id": 0,
+  "name": "string",
+  "type": "comagic",
+  "account_id": 0,
+  "context": {},
+  "status": "active"
+}
+</code></pre>
+<p>Ожидаемый код ответа: <code>200</code> или <code>204</code></p>
+<h4 id="_28">Новый чат <a name="webhookChat"></a></h4>
+<p>Метод: <code>POST</code>
+URL: <code>{webhook_url}/chat</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v1</code>, <code>v2</code>  </p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "visitor_id": 0,
+  "visitor_phone": "string",
+  "operator_id": 0,
+  "initiator": "operator",
+  "created_at": "2023-01-01T00:00:00.001Z"
+}
+</code></pre>
+<h4 id="_29">Обновление чата <a name="webhooksChatUpdate"></a></h4>
+<p>Метод: <code>PATCH</code>
+URL: <code>{webhook_url}/chat</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v2</code></p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "operator_id": 0,
+}
+</code></pre>
+<h4 id="_30">Завершение чата <a name="webhooksChatClose"></a></h4>
+<p>Метод: <code>POST</code>
+URL: <code>{webhook_url}/chat/close</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v1</code>, <code>v2</code>  </p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "operator_id": 0,
+  "reason": "closed_by_timeout"
+}
+</code></pre>
+<p>Ожидаемый код ответа: <code>200</code> или <code>204</code>. Параметр <code>operator_id</code> опциональный. </p>
+<h4 id="_31">Закрепление чата за оператором <a name="webhooksChatOperatorUpdate"></a></h4>
+<p>Метод: <code>POST</code>
+URL: <code>{webhook_url}/chat/operator</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v1</code>  </p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "operator_id": 0
+}
+</code></pre>
+<h4 id="_32">Новое сообщение <a name="webhookMessage"></a></h4>
+<p>Метод: <code>POST</code>
+URL: <code>{webhook_url}/message</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v1</code>, <code>v2</code>  </p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "id": 0,
+  "chat_id": 0,
+  "source": "system",
+  "operator_id": 0,
+  "reply_to_id": 0,
+  "text": "string",
+  "created_at": "2023-01-01T00:00:00.001Z",
+  "status": "accepted",
+  "resource": {
+    "id": 0,
+    "token": "string",
+    "type": "photo",
+    "name": "string",
+    "size": 0
+  },
+  "system_message_mnemonic": "string"
+}
+</code></pre>
+<p>Параметр <code>status</code> может принимать следующие значения: <code>accepted</code>, <code>delivered</code>, <code>read</code>, <code>sent</code>, <code>error</code></p>
+<h4 id="_33">Обновление сообщения <a name="webhookMessageUpdate></a></h4>
+<p>Метод: <code>POST</code>
+URL: <code>{webhook_url}/message</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v2</code>  </p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "id": 0,
+  "chat_id": 0,
+  "text": "string",
+  "resource": {
+    "id": 0,
+    "token": "string",
+    "type": "photo",
+    "name": "string",
+    "size": 0
+  },
+}
+</code></pre>
+<h4 id="_34">Изменение статуса сообщения <a name="webhooksMessageStatusUpdate"></a></h4>
+<p>Метод: <code>POST</code>
+URL: <code>{webhook_url}/message/status</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v1</code>, <code>v2</code>  </p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "chat_id": 0,
+  "message_id": 0,
+  "status": "accepted"
+}
+</code></pre>
+<h4 id="_35">Обновление информации о посетителе <a name="webhooksVisitorCardUpdate"></a></h4>
+<p>Метод: <code>POST</code>
+URL: <code>{webhook_url}/visitor/card</code></p>
+<blockquote>
+<p>Доступно в версиях: <code>v1</code>, <code>v2</code>  </p>
+</blockquote>
+<pre><code>{
+  "context": {},
+  "account_id": 0,
+  "channel_id": 0,
+  "visitor_id": 0,
+  "visitor_card": {}
+}
+</code></pre>
+<p>Описание объекта <code>visitor_card</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Имя</td>
+</tr>
+<tr>
+<td><code>company</code></td>
+<td><code>str</code></td>
+<td>Компания</td>
+</tr>
+<tr>
+<td><code>comment</code></td>
+<td><code>str</code></td>
+<td>Комментарий</td>
+</tr>
+<tr>
+<td><code>phones</code></td>
+<td><code>list[str]</code></td>
+<td>Список номеров телефонов</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td><code>list[str]</code></td>
+<td>Список адресов электронной почты</td>
+</tr>
+</tbody>
+</table>
+<h4 id="v1-v2">Переход с версии обратного вызова <code>v1</code> на <code>v2</code></h4>
+<p>Основные отличия <code>v2</code> от <code>v1</code>:
+- вместо обратного вызова <a href="#webhooksChatOperatorUpdate">закрепление чата за оператором</a> используется вызов <a href="#webhooksChatUpdate">обновление чата</a>.
+- добавлен обратный вызов <a href="#webhookMessageUpdate">обновления сообщения</a></p>
+<h3 id="waba">Работа с каналом типа <code>waba</code> <a name="apiChannelWaba"></a></h3>
+<p>Отличительными особенностями канала типа <code>waba</code> является ограничение на создание исходящих коммуникаций только посредством предустановленных шаблонов, а также возможность вести диалог только в рамках "временного окна", открывающегося с момента ответа посетителем на сообщение оператора.<br />
+Информация о доступных для использования шаблонов (а так же их изменения) передается в обратных вызовах связанных с каналом, в атрибуте <code>context["message_templates"]</code> типа <code>list[MessageTemplate]</code>.
+Для полноценной работы с шаблонами <code>waba</code> адаптер должен реализовать поддержку версии обратных вызовов <code>v2</code>.</p>
+<p>Структура шаблона сообщения <code>MessageTemplate</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор шаблона</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Наименование шаблона</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td><code>MessageTemplateContent</code></td>
+<td>Содержимое шаблона</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>datetime</code></td>
+<td>Дата и время создания шаблона</td>
+</tr>
+</tbody>
+</table>
+<p>Структура содержимого шаблона <code>MessageTemplateContent</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>str</code></td>
+<td>Текст сообщения</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td><code>MessageTemplateContentHeader</code></td>
+<td>Заголовок</td>
+</tr>
+<tr>
+<td><code>footer</code></td>
+<td><code>MessageTemplateContentFooter</code></td>
+<td>Сноска</td>
+</tr>
+<tr>
+<td><code>keyboard</code></td>
+<td><code>MessageTemplateContentKeyboard</code></td>
+<td>Кнопки меню</td>
+</tr>
+</tbody>
+</table>
+<p>Структура заголовка сообщения <code>MessageTemplateContentHeader</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>Optional[str]</code></td>
+<td>Текст заголовка</td>
+</tr>
+<tr>
+<td><code>headerType</code></td>
+<td><code>Optional[enum]</code></td>
+<td>Тип заголовка. Допустимые значения: <code>TEXT</code>, <code>VIDEO</code>, <code>IMAGE</code>, <code>DOCUMENT</code></td>
+</tr>
+<tr>
+<td><code>headerExampleMediaUrl</code></td>
+<td><code>Optional[str]</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Структура сноски сообщения <code>MessageTemplateContentFooter</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>Optional[str]</code></td>
+<td>Текст сноски</td>
+</tr>
+</tbody>
+</table>
+<p>Структура объекта <code>MessageTemplateContentKeyboard</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rows</code></td>
+<td><code>list[MessageTemplateContentKeyboardRow]</code></td>
+<td>Список объектов типа <code>MessageTemplateContentKeyboardRow</code></td>
+</tr>
+</tbody>
+</table>
+<p>Структура объекта <code>MessageTemplateContentKeyboardRow</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>buttons</code></td>
+<td><code>list[MessageTemplateContentButton]</code></td>
+<td>Список объектов типа <code>MessageTemplateContentButton</code></td>
+</tr>
+</tbody>
+</table>
+<p>Структура объекта <code>MessageTemplateContentButton</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>str</code></td>
+<td>Текст кнопки</td>
+</tr>
+<tr>
+<td><code>buttonType</code></td>
+<td><code>enum</code></td>
+<td>Тип кнопки. Допустимые значения: <code>QUICK_REPLY</code>, <code>URL</code>, <code>PHONE</code></td>
+</tr>
+<tr>
+<td><code>payload</code></td>
+<td><code>str</code></td>
+<td>Текст ответа. Применимо только для кнопок типа <code>QUICK_REPLY</code></td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>str</code></td>
+<td>Ссылка. Применимо только для кнопок типа <code>URL</code></td>
+</tr>
+<tr>
+<td><code>phone</code>]</td>
+<td><code>str</code></td>
+<td>Номер телефона. Применимо только для кнопок типа <code>PHONE</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_36">Отправка сообщения с использованием шаблона</h4>
+<p>Для отправки сообщения с шаблоном используется метод <a href="#apiMessage">отправки сообщения</a>. Шаблон передается в атрибуте <code>context[template]</code> в следующем формате:</p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>Идентификатор шаблона</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td><code>str</code></td>
+<td>Текст сообщения</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td><code>MessageTemplateContentHeader</code></td>
+<td>Заголовок</td>
+</tr>
+<tr>
+<td><code>footer</code></td>
+<td><code>MessageTemplateContentFooter</code></td>
+<td>Сноска</td>
+</tr>
+<tr>
+<td><code>keyboard</code></td>
+<td><code>MessageTemplateContentKeyboard</code></td>
+<td>Кнопки меню</td>
+</tr>
+</tbody>
+</table>
+<p>Информация о временном окне передается в обратных вызовах <a href="#webhookMessage">новое сообщение</a> и <a href="#webhookMessageUpdate">обновление сообщения</a> в атрибуте <code>context["conversation_frame_ts"]</code> типа <code>int</code>.
+Значением атрибута является unix timestamp, указывает время окончания временного окна. Если атрибут или его значение отсутствуют, то считается что временное окно закрыто. </p>
+<h2 id="_37">Примеры <a name="examples"></a></h2>
+<p>В данном примере выполняется регистрация адаптера, подключение канала типа <code>whatsapp</code>, создание чата и отправка сообщения.</p>
+<h3 id="_38">Настройка <a name="examplesSetup"></a></h3>
+<h4 id="_39">Получение токена аутентификации <a name="examplesAuth"></a></h4>
+<p>Запрос</p>
+<pre><code>POST https://go.uiscom.ru/api/auth/json_rpc?method=login
+
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;1742467134&quot;,
+  &quot;method&quot;: &quot;login&quot;,
+  &quot;params&quot;: {
+    &quot;login&quot;: &quot;my_login&quot;,
+    &quot;password&quot;: &quot;my_password&quot;,
+    &quot;project&quot;:&quot;uis2&quot;
+  }
+}
+</code></pre>
+<p>Ответ</p>
+<pre><code>{
+   &quot;error&quot; : null,
+   &quot;id&quot; : &quot;U7-r8Ld5BUakw2OP337Xy&quot;,
+   &quot;jsonrpc&quot; : &quot;2.0&quot;,
+   &quot;result&quot; : {
+      &quot;is_2fa_enabled&quot; : false,
+      &quot;jwt&quot; : &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c&quot;,
+      &quot;refresh&quot; : &quot;69cc054cf22042d38f39bd06bc4d7707&quot;
+   }
+}
+</code></pre>
+<p>Полученное в результате значение <code>result["jwt"]</code> используется в качестве токена</p>
+<h4 id="_40">Создание адаптера <a name="examplesCreateAdapter"></a></h4>
+<p>Запрос</p>
+<pre><code>POST https://chats-prod-logic.uiscom.ru/v1/integration/adapter
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+{
+  &quot;type&quot;: &quot;custom_solutions_llc_adapter&quot;,
+  &quot;name&quot;: &quot;Custom Solutions LLC Chat Adapter&quot;,
+  &quot;login&quot;: &quot;my_very_secret_and_unique_login&quot;,
+  &quot;password&quot;: &quot;something_stronger_than_just_1234567890&quot;,
+  &quot;webhook_url&quot;: &quot;https://webhook.my-custom-solutions.com/chat-integration&quot;,
+  &quot;webhook_auth&quot;: {
+    &quot;type&quot;: &quot;Basic&quot;,
+    &quot;login&quot;: &quot;my_webhook_basic_login&quot;,
+    &quot;password&quot;: &quot;my_webhook_basic_password&quot;
+  },
+  &quot;supported_channel_types&quot;: [
+    &quot;comagic&quot;,
+    &quot;whatsapp&quot;
+  ]
+}
+</code></pre>
+<p>Ответ</p>
+<pre><code>{
+  &quot;id&quot;: 322,
+  &quot;type&quot;: &quot;custom_solutions_llc_adapter&quot;,
+  &quot;name&quot;: &quot;Custom Solutions LLC Chat Adapter&quot;,
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;supported_channel_types&quot;: [
+    &quot;comagic&quot;,
+    &quot;whatsapp&quot;
+  ],
+  &quot;owner&quot;: 4735,
+  &quot;visibility_status&quot;: &quot;private&quot;,
+  &quot;login&quot;: &quot;my_very_secret_and_unique_login&quot;,
+  &quot;webhook_url&quot;: &quot;https://webhook.my-custom-solutions.com/chat-integration&quot;,
+  &quot;webhook_kwargs&quot;: {}
+}
+</code></pre>
+<h4 id="_41">Получение списка подключенных в аккаунте каналов чатов <a name="examplesChannelList"></a></h4>
+<p>Запрос</p>
+<pre><code>GET https://chats-prod-logic.uiscom.ru/v1/integration/channel
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+</code></pre>
+<p>Ответ</p>
+<pre><code>[
+  {
+    &quot;id&quot;: 740805,
+    &quot;channel_id&quot;: 28910,
+    &quot;type&quot;: &quot;whatsapp&quot;,
+    &quot;name&quot;: &quot;Main Whatsapp Channel&quot;,
+    &quot;is_active&quot;: true,
+    &quot;is_removed&quot;: false,
+    &quot;status&quot;: &quot;active&quot;,
+    &quot;status_reason&quot;: &quot;&quot;
+  }
+]
+</code></pre>
+<h4 id="_42">Подключение канала <a name="examplesCreateAccountAndChannel"></a></h4>
+<p>Для подключения канала обязательным является доступность web-сервера указанного в <code>webhook_url</code> при создании адаптера.
+В качестве значения <code>adapter_id</code> указывается идентификатор адаптера (<code>id</code>) полученный на шаге <a href="#examplesCreateAdapter">создания адаптера</a>.
+В списке <code>channels</code> указываются идентификаторы каналов (<code>id</code>), которые необходимо подключить. В примере используется идентификатор 740805 соответствующий каналу с наименованием "Main Whatsapp Channel" на <a href="#examplesChannelList">предыдущем шаге</a>.<br />
+Запрос</p>
+<pre><code>POST https://chats-prod-logic.uiscom.ru/v1/integration/account
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+{
+  &quot;name&quot;: &quot;Custom Solutions LLC Chat Adapter Integration&quot;,
+  &quot;adapter_id&quot;: 322,
+  &quot;channels&quot;: [740805],
+  &quot;context&quot;: {}
+}
+</code></pre>
+<p>Ответ</p>
+<pre><code>{
+  &quot;name&quot;: &quot;Custom Solutions LLC Chat Adapter Integration&quot;,
+  &quot;adapter_id&quot;: 322,
+  &quot;channels&quot;: [740805],
+  &quot;context&quot;: {},
+  &quot;id&quot;: 286,
+  &quot;status&quot;: &quot;active&quot;
+}
+</code></pre>
+<p>Обратный вызов (создание аккаунта) <a name="examplesAccountWebhook"></a></p>
+<pre><code>POST https://webhook.my-custom-solutions.com/chat-integration/account
+Authorization: Basic bXlfd2ViaG9va19iYXNpY19sb2dpbjpteV93ZWJob29rX2Jhc2ljX3Bhc3N3b3Jk 
+
+{
+    &quot;id&quot;: 286,
+    &quot;name&quot;: &quot;Custom Solutions LLC Chat Adapter Integration&quot;,
+    &quot;adapter_id&quot;: 322,
+    &quot;client_id&quot;: 1,
+    &quot;context&quot;: {&quot;app_id&quot;: 4735},
+    &quot;status&quot;: &quot;active&quot;
+}
+</code></pre>
+<p>Обратный вызов (создание канала) <a name="examplesChannelWebhook"></a></p>
+<pre><code>POST https://webhook.my-custom-solutions.com/chat-integration/channel
+Authorization: Basic bXlfd2ViaG9va19iYXNpY19sb2dpbjpteV93ZWJob29rX2Jhc2ljX3Bhc3N3b3Jk
+
+{
+    &quot;id&quot;: 3580,
+    &quot;name&quot;: &quot;Main Whatsapp Channel&quot;,
+    &quot;type&quot;: &quot;whatsapp&quot;,
+    &quot;account_id&quot;: 286,
+    &quot;context&quot;: {&quot;app_id&quot;: 4735, &quot;chat_channel_id&quot;: 740805},
+    &quot;status&quot;: &quot;active&quot;
+}
+</code></pre>
+<h3 id="_43">Использование адаптера <a name="examplesUsage"></a></h3>
+<h4 id="_44">Получение токена адаптера <a name="examplesAdapterAuth"></a></h4>
+<p>Запрос</p>
+<pre><code>POST https://chat-integration-api-prod.uiscom.ru/v1/adapter/login
+Content-Type: application/x-www-form-urlencoded
+
+username=my_very_secret_and_unique_login&amp;password=something_stronger_than_just_1234567890
+</code></pre>
+<p>Ответ</p>
+<pre><code>{
+  &quot;access_token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiQWRhcHRlciIsInR5cGVfaWQiOjMyMiwiZXhwIjoxNzQyNTQxNzQxfQ.RMagvgqDBSD8xlr18E8M-8vNazAZwN_01YZopaq7-zg&quot;,
+  &quot;token_type&quot;: &quot;bearer&quot;,
+  &quot;expires_at&quot;: 1742541741
+}
+</code></pre>
+<p>Далее для всех запросов к ChatAPI в заголовке <code>Authorization</code> необходимо передавать полученный <code>access_token</code>.</p>
+<h4 id="_45">Создание чата <a name="examplesCreateChat"></a></h4>
+<p>Запрос</p>
+<pre><code>POST https://chat-integration-api-prod.uiscom.ru/v1/adapter/chat
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiQWRhcHRlciIsInR5cGVfaWQiOjMyMiwiZXhwIjoxNzQyNTQxNzQxfQ.RMagvgqDBSD8xlr18E8M-8vNazAZwN_01YZopaq7-zg 
+
+{
+ &quot;account_id&quot;: 286,
+ &quot;channel_id&quot;: 3580,
+ &quot;visitor_phone&quot;: &quot;74959268686&quot;,
+ &quot;operator_id&quot;: 367852,
+ &quot;initiator&quot;: &quot;operator&quot;,
+ &quot;created_at&quot;: &quot;2025-03-21T05:00:00.000+00:00&quot;
+}
+</code></pre>
+<p>В этом и последующих запросах для значения <code>account_id</code> используется идентификатор аккаунта, полученный в <a href="#examplesAccountWebhook">обратном вызове создания аккаунта</a>, а в качестве <code>channel_id</code> -- идентификатор канала, полученный в <a href="#examplesChannelWebhook">обратном вызове создания канала</a>.
+Идентификатор сотрудника (<code>operator_id</code>) получен из DataAPI при помощи метода <code>get.employees</code>.</p>
+<p>Ответ</p>
+<pre><code>{
+  &quot;context&quot;: {},
+  &quot;account_id&quot;: 286,
+  &quot;channel_id&quot;: 3580,
+  &quot;chat_id&quot;: 199304420,
+  &quot;visitor_id&quot;: 9012381597,
+  &quot;visitor_phone&quot;: &quot;74959268686&quot;,
+  &quot;visitor_email&quot;: null,
+  &quot;visitor_username&quot;: null,
+  &quot;operator_id&quot;: 367852,
+  &quot;initiator&quot;: &quot;operator&quot;,
+  &quot;created_at&quot;: &quot;2025-03-21T05:00:00.248137+00:00&quot;
+}
+</code></pre>
+<p>Обратный вызов с системным сообщением о начале чата.</p>
+<pre><code>POST https://webhook.my-custom-solutions.com/chat-integration/message
+Authorization: Basic bXlfd2ViaG9va19iYXNpY19sb2dpbjpteV93ZWJob29rX2Jhc2ljX3Bhc3N3b3Jk
+
+{
+    &quot;context&quot;: {&quot;app_id&quot;: 4735, &quot;chat_channel_id&quot;: 740805},
+    &quot;account_id&quot;: 286,
+    &quot;channel_id&quot;: 3580,
+    &quot;id&quot;: 623010892,
+    &quot;chat_id&quot;: 199304420,
+    &quot;source&quot;: &quot;system&quot;,
+    &quot;operator_id&quot;: null,
+    &quot;reply_to_id&quot;: null,
+    &quot;text&quot;: &quot;Чат начат оператором Марина&quot;,
+    &quot;created_at&quot;: &quot;2025-03-21T05:00:00.248137+00:00&quot;,
+    &quot;status&quot;: &quot;sent&quot;,
+    &quot;resource&quot;: null,
+    &quot;system_message_mnemonic&quot;: &quot;chat_started&quot;
+}
+</code></pre>
+<h4 id="_46">Отправка сообщения в чат</h4>
+<p>Запрос</p>
+<pre><code>POST https://chat-integration-api-prod.uiscom.ru/v1/adapter/message
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiQWRhcHRlciIsInR5cGVfaWQiOjMyMiwiZXhwIjoxNzQyNTQxNzQxfQ.RMagvgqDBSD8xlr18E8M-8vNazAZwN_01YZopaq7-zg
+
+{
+  &quot;account_id&quot;: 286,
+  &quot;channel_id&quot;: 3580,
+  &quot;chat_id&quot;: 199304420,
+  &quot;source&quot;: &quot;operator&quot;,
+  &quot;operator_id&quot;: 367852,
+  &quot;text&quot;: &quot;Сообщение от оператора&quot;,
+  &quot;created_at&quot;: &quot;2025-03-21T05:00:01+00:00&quot;
+}
+</code></pre>
+<p>Идентификатор чата <code>chat_id</code> получен в ответе на <a href="#examplesCreateChat">запрос создания чата</a>.</p>
+<p>Ответ</p>
+<pre><code>{
+  &quot;context&quot;: null,
+  &quot;account_id&quot;: 286,
+  &quot;channel_id&quot;: 3580,
+  &quot;id&quot;: 623010897,
+  &quot;chat_id&quot;: 199304420,
+  &quot;source&quot;: &quot;operator&quot;,
+  &quot;operator_id&quot;: 367852,
+  &quot;reply_to_id&quot;: null,
+  &quot;text&quot;: &quot;Сообщение от оператора&quot;,
+  &quot;created_at&quot;: &quot;2025-03-21T05:00:01+00:00&quot;,
+  &quot;status&quot;: null,
+  &quot;resource&quot;: null,
+  &quot;system_message_mnemonic&quot;: null
+}
+</code></pre>
+<p>Обратный вызов со статусом доставки сообщения</p>
+<pre><code>POST https://webhook.my-custom-solutions.com/chat-integration/message/status
+Authorization: Basic bXlfd2ViaG9va19iYXNpY19sb2dpbjpteV93ZWJob29rX2Jhc2ljX3Bhc3N3b3Jk
+
+{
+    &quot;context&quot;: {&quot;app_id&quot;: 4735, &quot;chat_channel_id&quot;: 740805},
+    &quot;account_id&quot;: 286,
+    &quot;channel_id&quot;: 3580,
+    &quot;chat_id&quot;: 199304420,
+    &quot;message_id&quot;: 623010897,
+    &quot;status&quot;: &quot;delivered&quot;
+}
+</code></pre>
+<h2 id="_47">История изменений <a name="changelog"></a></h2>
+<h3 id="1100-2025-05-15">1.10.0 (2025-05-15)</h3>
+<ul>
+<li>уточнена информация о каналах, <a href="#apiChat">поддерживающих инициализацию коммуникации</a></li>
+</ul>
+<h3 id="190-2025-04-11">1.9.0 (2025-04-11)</h3>
+<ul>
+<li>уточнена документация о создании адаптера (указание <code>webhook_version</code>)</li>
+</ul>
+<h3 id="180-2025-03-20">1.8.0 (2025-03-20)</h3>
+<ul>
+<li>добавлен раздел <a href="#examples">Примеры</a></li>
+</ul>
+<h3 id="170-2024-12-09">1.7.0 (2024-12-09)</h3>
+<ul>
+<li>добавлена информация о новой версии обратных вызовов <code>v2</code></li>
+<li>расширен список типов каналов, которые может использовать адаптер</li>
+<li>добавлена информация о работе с каналом типа <code>waba</code></li>
+</ul>
+<h3 id="160-2024-10-01">1.6.0 (2024-10-01)</h3>
+<ul>
+<li>добавлена информация о новом атрибуте адаптера <code>webhook_auth</code></li>
+</ul>
+<h3 id="151-2024-09-26">1.5.1 (2024-09-26)</h3>
+<ul>
+<li>в разделе <a href="#agreements">Соглашения</a> добавлена информация об обратных вызовах.</li>
+</ul>
+<h3 id="150-2024-04-11">1.5.0 (2024-04-11)</h3>
+<ul>
+<li>добавлена информация о версионировании обратных вызовов.</li>
+<li>добавлена реализация метода завершения чата</li>
+<li>добавлен новый метод для трансфера чата</li>
+</ul>
+<h3 id="140-2023-09-18">1.4.0 (2023-09-18)</h3>
+<p>Добавлена информация о получении токена аутентификации (вход в личный кабинет).  </p>
+<h3 id="130-2023-09-18">1.3.0 (2023-09-18)</h3>
+<p>У события нового сообщения удален избыточный атрибут <code>visitor_id</code>.</p>
+<h3 id="120-2023-09-14">1.2.0 (2023-09-14)</h3>
+<p>У всех событий удалены избыточные атрибуты <code>app_id</code> и <code>site_id</code>. </p>
+<h3 id="110-2023-09-13">1.1.0 (2023-09-13)</h3>
+<p>Обновлена информация об аутентификации.</p>
+<h3 id="100-2023-09-12">1.0.0 (2023-09-12)</h3>
+<p>Первоначальная версия.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="js/init.js"></script>
+      
+    
+  </body>
+</html>

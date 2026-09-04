@@ -1,0 +1,861 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Примеры использования Widget API - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#applywidgetoptions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Примеры использования Widget API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Справочник JS API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Справочник Widget API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Справочник Widget API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Справочник Widget API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../consultant/chat/" class="md-nav__link">
+        Чат
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../consultant/offline_message/" class="md-nav__link">
+        Заявка с сайта
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sitephone/" class="md-nav__link">
+        Сайтфон
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lead/offline_message_generator/" class="md-nav__link">
+        Генератор заявки
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lead/call_generator/" class="md-nav__link">
+        Генератор звонка
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lead/personal_form/" class="md-nav__link">
+        Персональная форма
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code/" class="md-nav__link">
+        Код вставки
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handbk/widget/" class="md-nav__link">
+        Виджет
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handbk/create_widget/" class="md-nav__link">
+        ViewController
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpls/" class="md-nav__link">
+        Шаблоны
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/form/" class="md-nav__link">
+        Плагины
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        События
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Примеры использования Widget API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Примеры использования Widget API
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#applywidgetoptions" class="md-nav__link">
+    Применение своих стилей и шаблонов через applyWidgetOptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Добавление чекбокса для ссылки на персональное соглашение на примере генератора заявки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comagic-widget" class="md-nav__link">
+    Использование .comagic-widget для изменения виджета
+  </a>
+  
+    <nav class="md-nav" aria-label="Использование .comagic-widget для изменения виджета">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#css" class="md-nav__link">
+    Добавление стилей на страницу с помощью подключения файла *.css
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stylestyle" class="md-nav__link">
+    Добавление стилей на страницу с помощью тега &lt;style&gt;&lt;/style&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comagic-widget-stylestyle" class="md-nav__link">
+    Примеры использования .comagic-widget с тегом &lt;style&gt;&lt;/style&gt;
+  </a>
+  
+    <nav class="md-nav" aria-label="Примеры использования .comagic-widget с тегом &lt;style&gt;&lt;/style&gt;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Скрытие виджета на странице
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Изменение положения консультант/сайтфона:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Изменение положения лидогенератора:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Соверешние звонка посетителю сайта после отправки заявки через лидогенератор
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Отправка заявки после заказа звонка через лидогенератор
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#applywidgetoptions" class="md-nav__link">
+    Применение своих стилей и шаблонов через applyWidgetOptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Добавление чекбокса для ссылки на персональное соглашение на примере генератора заявки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comagic-widget" class="md-nav__link">
+    Использование .comagic-widget для изменения виджета
+  </a>
+  
+    <nav class="md-nav" aria-label="Использование .comagic-widget для изменения виджета">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#css" class="md-nav__link">
+    Добавление стилей на страницу с помощью подключения файла *.css
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stylestyle" class="md-nav__link">
+    Добавление стилей на страницу с помощью тега &lt;style&gt;&lt;/style&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comagic-widget-stylestyle" class="md-nav__link">
+    Примеры использования .comagic-widget с тегом &lt;style&gt;&lt;/style&gt;
+  </a>
+  
+    <nav class="md-nav" aria-label="Примеры использования .comagic-widget с тегом &lt;style&gt;&lt;/style&gt;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Скрытие виджета на странице
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Изменение положения консультант/сайтфона:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Изменение положения лидогенератора:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Соверешние звонка посетителю сайта после отправки заявки через лидогенератор
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Отправка заявки после заказа звонка через лидогенератор
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Примеры использования Widget API</h1>
+                
+                <h2 id="applywidgetoptions">Применение своих стилей и шаблонов через <code>applyWidgetOptions</code></h2>
+<p>Для применения своих стилей и шаблонов необходимо в код вставки добавить ссылки на них, используя конструкцию <code>__cs.push(['applyWidgetsOptions', {...}])</code>.  В методе указываем  ссылки на компоненты (js, css, templates) виджетов, тип устройства и имя виджета.</p>
+<p>Типы устройств:</p>
+<ul>
+<li>desktop</li>
+<li>mobile</li>
+</ul>
+<p>Список имён виджетов:</p>
+<ul>
+<li>personal_form</li>
+<li>call_generator</li>
+<li>offline_message_generator</li>
+<li>sitephone</li>
+<li>consultant</li>
+</ul>
+<p>Пример использования пользовательских js, css и tpls для десктопного генератора звонка.</p>
+<pre><code>&lt;head&gt;
+    &lt;script&gt;
+        var __cs = __cs || [];
+        ...
+        __cs.push([“applyWidgetsOptions”, {
+            // имя виджета, для которого применяем кастомизацию
+“call_generator”: {
+                // тип устройства, для которого применяем кастомизацию
+desktop: {
+                    js: “//app.comagic.ru/widget/js/lead/desktop/call_generator.min.js”,    //кастомизированный JS-файл
+                    css: “//app.comagic.ru/widget/css/lead/desktop/lead_call_generator_desktop.css”,    //кастомизированный CSS-файл
+                    tpls: {
+                        &quot;call_generator&quot;: “//app.comagic.ru/widget/html/lead/desktop/call_generator.html” //кастомизированный шаблон виджета
+                    }
+                }
+            }
+        }]);
+    &lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; async src=&quot;//app.comagic.ru/static/cs.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+<p>Кастомизация применяется для всех виджетов, соответствующих указанному имени. 
+Например, у вас настроено несколько форм генератора звонка и вы хотите изменить их внешний вид. 
+После того, как вы укажете в конструкции имя виджета <code>call_generator</code>, изменения будут применены ко всем формам генератора звонка.</p>
+<h2 id="_1">Добавление чекбокса для ссылки на персональное соглашение на примере генератора заявки</h2>
+<p>Для добавления чекбокса на генератор заявки необходимо в консутркцию <code>applyWidgetsOptions</code> добавить метод <code>beforeViewControllerRun</code> и изменить свойства <code>is_personal_info_enabled</code> и <code>personal_info_tex’</code> в объекте <code>settings</code>.
+По умолчанию <code>‘is_personal_info_enabled’ = false</code>, <code>‘personal_info_text’ = "Согласен с обработкой персональных данных"</code>.</p>
+<pre><code>__cs.push(['applyWidgetsOptions', {
+    'offline_message_generator': {
+        desktop: {
+            beforeViewControllerRun: function (settings, tpls) {
+                settings['is_personal_info_enabled'] = true;
+                settings['personal_info_text'] = 'Даю согласие на обработку персональных данных';
+                return {settings: settings, tpls: tpls}; // необходимо возвращать объекты ‘settings’ и ‘tpls’, для дальнейшей корректной работы виджета
+            }
+        }
+    }
+});
+</code></pre>
+<p>Полученную конструкцию добавляем в код вставки CoMagic на сайте.
+Если при снятом чекбоксе попытаться отправить заявку, то чекбокс станет красного цвета, а заявка не отправится, пока чекбокс не будет выбран.</p>
+<h2 id="comagic-widget">Использование <code>.comagic-widget</code> для изменения виджета</h2>
+<p>Рассмотрим использование <code>.comagic-widget</code> на примере изменения положения виджета/скрытия виджета на странице.
+<code>.comagic-widget</code> - базовый класс всех виджетов, является индикатором того, что элементы с этим классом относятся к виджету. По-умолчанию класс пустой и не содержит блока объявления стилей.</p>
+<h3 id="css">Добавление стилей на страницу с помощью подключения файла <code>*.css</code></h3>
+<p>Для добавления стилей на страницу можно добавить их в файл с расширением <code>*.css</code>, например <code>style.css</code> и подключить их через <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>, где <code>href</code> - путь до места, где расположен файл <code>style.css</code>.</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ...
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="stylestyle">Добавление стилей на страницу с помощью тега <code>&lt;style&gt;&lt;/style&gt;</code></h3>
+<p>Для добавления стилей на страницу с помощью тега <code>&lt;style&gt;&lt;/style&gt;</code>, достаточно определить этот тег в своем html файле, и внутри этого тега задавать правила стилей</p>
+<h3 id="comagic-widget-stylestyle">Примеры использования <code>.comagic-widget</code> с тегом <code>&lt;style&gt;&lt;/style&gt;</code></h3>
+<h4 id="_2">Скрытие виджета на странице</h4>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;style&gt;
+            .comagic-widget {
+                display: none;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ...
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="_3">Изменение положения консультант/сайтфона:</h4>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;style&gt;
+            .comagic-widget {
+                justify-content: flex-start | center | flex-end; // положение виджета по вертикали сверху | по центру | снизу
+                left: 0; // положение виджета слева
+                right: 0; // положение виджета справа
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ...
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h4 id="_4">Изменение положения лидогенератора:</h4>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;style&gt;
+                 .comagic-widget {
+                    align-items: flex-start | center | flex-end; // положение виджета по вертикали сверху | по центру | снизу 
+                    justify-content: flex-start | center | flex-end; // положение виджета по горизонтали слева| по центру | справа
+}
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ...
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h2 id="_5">Соверешние звонка посетителю сайта после отправки заявки через лидогенератор</h2>
+<p>Рассмотрим использование метода <code>ComagicWidget.sitephoneCall()</code> c формой лидогенератора для совершения звонка после отправления заявки.</p>
+<p>В конструкцию <code>applyWidgetsOptions</code>необходимо добавить метод <code>afterViewControllerRun</code> и подписаться на событие <code>leadsubmit</code>, внутри которого мы будем вызывать метод <code>ComagicWidget.sitePhoneCall</code> с данными, полученными с формы генератора заявки.</p>
+<pre><code>__cs.push(['applyWidgetsOptions', {
+    // имя виджета, для которого применяем кастомизацию
+'offline_message_generator': {
+        // тип устройства, для которого применяем кастомизацию
+desktop: {
+            afterViewControllerRun: function () {
+                var offline_message_generator = Comagic.UI.getWidget('offline_message_generator'); // получение объекта виджета генератора заявки
+                offline_message_generator.on('leadsubmit', function(request) {
+                    var values = offline_message_generator.getValues(), // получение значений всех полей генератора заявки
+                        phone = values['phone'];
+
+                    phone &amp;&amp; ComagicWidget.sitePhoneCall({phone: phone}); // вызов ComagicWidget.sitePhoneCall
+                });
+            }
+        }
+    }
+});
+</code></pre>
+<p>Полученную конструкцию добавляем в код вставки CoMagic на сайте.
+Так как мы используем метод <code>ComagicWidget.sitephoneCall()</code> для совершения звонка, то вызов будет обрабатываться по настройкам сайтфона.
+Компонент “Сайтфон” должен быть подключен и настроен.</p>
+<h2 id="_6">Отправка заявки после заказа звонка через лидогенератор</h2>
+<p>Рассмотрим использование метода <code>Comagiс.addOfflineRequest()</code> c формой лидогенератора для отправления заявки после заказа звонка.
+В конструкцию <code>applyWidgetsOptions</code> необходимо добавить метод <code>afterViewControllerRun</code> и подписаться на событие <code>leadsubmit</code>, внутри которого мы будем вызывать событие <code>Comagic.addOfflineRequest</code> с данными, полученными с формы генератора звонка.</p>
+<pre><code>__cs.push(['applyWidgetsOptions', {
+    // имя виджета, для которого применяем кастомизацию
+'call_generator': {
+        // тип устройства, для которого применяем кастомизацию
+desktop: {
+            afterViewControllerRun: function () {
+                var call_generator = Comagic.UI.getWidget('call_generator'); // получение объекта виджета генератора звонка
+                call_generator.on('leadsubmit', function(request) {
+                    var values = call_generator.getValues(), // получение значений всех полей генератора звонка
+                        phone = values['phone'];
+
+                    phone &amp;&amp; Comagic.addOfflineRequest({phone: phone}); // вызов Comagic.addOfflineRequest
+                });
+            }
+        }
+    }
+});
+</code></pre>
+<p>Полученную конструкцию добавляем в код вставки CoMagic на сайте.
+Для использования метода <code>Comagiс.addOfflineRequest()</code> должен быть подключен компонент “Консультант”.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../events/" class="md-footer__link md-footer__link--prev" aria-label="Previous: События" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              События
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>
