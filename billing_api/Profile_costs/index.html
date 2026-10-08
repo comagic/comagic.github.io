@@ -1,0 +1,1187 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Финальный расчет коммерческого предложения - Billing API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Billing API" class="md-header__button md-logo" aria-label="Billing API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Billing API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Финальный расчет коммерческого предложения
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Billing API" class="md-nav__button md-logo" aria-label="Billing API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Billing API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Общая информация
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tps/" class="md-nav__link">
+        Тарифные планы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ops/" class="md-nav__link">
+        Опции тарифных планов
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Components/" class="md-nav__link">
+        Компоненты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Limits/" class="md-nav__link">
+        Лимиты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cp_tasks/" class="md-nav__link">
+        Задачи и решения для коммерческого предложения
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cp_ad_sources/" class="md-nav__link">
+        Рекламные источники
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Simple_dt_prefixes/" class="md-nav__link">
+        Префиксы номеров для простого динамического колл-трекинга
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Number_capacity_owners/" class="md-nav__link">
+        Владельцы номерных емкостей
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Number_capacity_costs/" class="md-nav__link">
+        Стоимость номерных емкостей
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Number_capacity_categories/" class="md-nav__link">
+        Категории номерных емкостей
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cp_templates/" class="md-nav__link">
+        Шаблоны коммерческого предложения
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cp_requirements/" class="md-nav__link">
+        Требования клиента для коммерческого предложения
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dt_estimate_number_count/" class="md-nav__link">
+        Расчет количества номеров для динамического КТ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Финальный расчет коммерческого предложения
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Финальный расчет коммерческого предложения
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Получение финальной стоимости коммерческого предложения
+  </a>
+  
+    <nav class="md-nav" aria-label="Получение финальной стоимости коммерческого предложения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Параметры запроса
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Параметры ответа
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON структура запроса
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_1" class="md-nav__link">
+    JSON структура ответа
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Список возвращаемых ошибок
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Call_cost/" class="md-nav__link">
+        Расчет стоимости звонка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reserve_number/" class="md-nav__link">
+        Резервирование номера
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Free_numbers/" class="md-nav__link">
+        Список номеров
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Получение финальной стоимости коммерческого предложения
+  </a>
+  
+    <nav class="md-nav" aria-label="Получение финальной стоимости коммерческого предложения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Параметры запроса
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Параметры ответа
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON структура запроса
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_1" class="md-nav__link">
+    JSON структура ответа
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Список возвращаемых ошибок
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Финальный расчет коммерческого предложения</h1>
+                
+                <p><a name="get_profile_costs"></a></p>
+<h2 id="_1">Получение финальной стоимости коммерческого предложения</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Метод</th>
+<th align="left"><code>get.profile_costs</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Описание</td>
+<td align="left">Получение финальной стоимости коммерческого предложения</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">Параметры запроса</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Название</th>
+<th align="left">Тип</th>
+<th align="center">Обязательный</th>
+<th align="left">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>access_token</code></td>
+<td align="left">string</td>
+<td align="center">да</td>
+<td align="left">Ключ аутентификации</td>
+</tr>
+<tr>
+<td align="left"><code>tp_id</code></td>
+<td align="left">string</td>
+<td align="center">да</td>
+<td align="left">Уникальный идентификатор тарифного плана</td>
+</tr>
+<tr>
+<td align="left"><code>op_ids</code></td>
+<td align="left">array of number</td>
+<td align="center">нет</td>
+<td align="left">Массив (возможно пустой) идентификаторов тарифных опций</td>
+</tr>
+<tr>
+<td align="left"><code>components</code></td>
+<td align="left">array of string</td>
+<td align="center">нет</td>
+<td align="left">Массив выбранных компонентов</td>
+</tr>
+<tr>
+<td align="left"><code>limits</code></td>
+<td align="left">object</td>
+<td align="center">нет</td>
+<td align="left">Расширения лимитов</td>
+</tr>
+<tr>
+<td align="left"><code>number_capacity</code></td>
+<td align="left">array of object</td>
+<td align="center">нет</td>
+<td align="left">Выбранные номерные емкости</td>
+</tr>
+<tr>
+<td align="left"><code>prefix</code></td>
+<td align="left">string</td>
+<td align="center">да</td>
+<td align="left">Префикс номерной емкости</td>
+</tr>
+<tr>
+<td align="left"><code>owner_id</code></td>
+<td align="left">number</td>
+<td align="center">да</td>
+<td align="left">Уникальный идентификатор владельца номерной емкости</td>
+</tr>
+<tr>
+<td align="left"><code>category</code></td>
+<td align="left">string</td>
+<td align="center">да</td>
+<td align="left">Категория номеров в емкости, <code>usual</code> - обычный, <code>bronze</code> - бронзовый, <code>silver</code> - серебряный, <code>gold</code> - золотой</td>
+</tr>
+<tr>
+<td align="left"><code>count</code></td>
+<td align="left">number</td>
+<td align="center">да</td>
+<td align="left">Количество номеров динамического КТ в блока с номерами на сайте</td>
+</tr>
+<tr>
+<td align="left"><code>component</code></td>
+<td align="left">string</td>
+<td align="center">да</td>
+<td align="left">Мнемоническое название компонента</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">Параметры ответа</h3>
+<table>
+    <thead>
+        <tr>
+            <th align="left">Название</th>
+            <th align="left">Тип</th>
+            <th align="left">Допустимые значения</th>
+            <th align="left">Описание</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="left" colspan="4">Тарифный план</td>
+        </tr>
+        <tr>
+            <td align="left"><code>tp</code></td>
+            <td align="left">array</td>
+            <td align="left"></td>
+            <td align="left">Тарифный план</td>
+        </tr>
+        <tr>
+            <td align="left"><code>tp_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Уникальный идентификатор тарифного плана</td>
+        </tr>
+        <tr>
+            <td align="left"><code>cost</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Объем списания</td>
+        </tr>
+        <tr>
+            <td align="left"><code>service</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Тип списания<br><code>user_charge_tp</code> - абонентская плата по тарифному плану</td>
+        </tr>
+        <tr>
+            <td align="left" colspan="4">Дополнительные опции</td>
+        </tr>
+        <tr>
+            <td align="left"><code>ops</code></td>
+            <td align="left">array</td>
+            <td align="left"></td>
+            <td align="left">Опции</td>
+        </tr>
+        <tr>
+            <td align="left"><code>op_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Уникальный идентификатор опции</td>
+        </tr>
+        <tr>
+            <td align="left"><code>cost</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Объем списания</td>
+        </tr>
+        <tr>
+            <td align="left"><code>service</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Тип списания<br><code>activation_op</code> - плата за подключение опции<br><code>user_charge_op</code> - абонентская плата за опцию</td>
+        </tr>
+        <tr>
+            <td align="left" colspan="4">Лимиты</td>
+        </tr>
+        <tr>
+            <td align="left"><code>limits</code></td>
+            <td align="left">array</td>
+            <td align="left"></td>
+            <td align="left">Лимиты</td>
+        </tr>
+        <tr>
+            <td align="left"><code>limit</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Мнемоническое название лимита</td>
+        </tr>
+        <tr>
+            <td align="left"><code>tp_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Уникальный идентификатор тарифного плана</td>
+        </tr>
+        <tr>
+            <td align="left"><code>op_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Уникальный идентификатор опции</td>
+        </tr>
+        <tr>
+            <td align="left"><code>cost</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Объем списания</td>
+        </tr>
+        <tr>
+            <td align="left"><code>service</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Тип списания<br><code>user_charge_physical_limit</code> - плата за расширение лимита</td>
+        </tr>
+        <tr>
+            <td align="left" colspan="4">Компоненты тарифного плана</td>
+        </tr>
+        <tr>
+            <td align="left"><code>components</code></td>
+            <td align="left">array</td>
+            <td align="left"></td>
+            <td align="left">Компоненты</td>
+        </tr>
+        <tr>
+            <td align="left"><code>component</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Мнемоническое название компонента</td>
+        </tr>
+        <tr>
+            <td align="left"><code>tp_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Уникальный идентификатор тарифного плана</td>
+        </tr>
+        <tr>
+            <td align="left"><code>op_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Уникальный идентификатор опции</td>
+        </tr>
+        <tr>
+            <td align="left"><code>cost</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Объем списания</td>
+        </tr>
+        <tr>
+            <td align="left"><code>service</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Тип списания<br><code>activation_component</code> - плата за подключение компонента<br><code>user_charge_component</code> - абонентская плата за компонент</td>
+        </tr>
+        <tr>
+            <td align="left" colspan="4">Номерные емкости</td>
+        </tr>
+        <tr>
+            <td align="left"><code>number_capacity</code></td>
+            <td align="left">array</td>
+            <td align="left"></td>
+            <td align="left">Номерные емкости</td>
+        </tr>
+        <tr>
+            <td align="left"><code>prefix</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Префикс номерной емкости</td>
+        </tr>
+        <tr>
+            <td align="left"><code>category</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Категория номеров в емкости<br><code>usual</code> - обычный<br><code>bronze</code> - бронзовый<br><code>silver</code> - серебряный<br><code>gold</code> - золотой<code>platinum</code> - платиновый<code>pair</code> - парный<br></td>
+        </tr>
+        <tr>
+            <td align="left"><code>location</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Мнемоническое название региона номерной емкости</td>
+        </tr>
+        <tr>
+            <td align="left"><code>owner_id</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Уникальный идентификатор владельца номерной емкости</td>
+        </tr>
+        <tr>
+            <td align="left"><code>site</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Адрес сайта</td>
+        </tr>
+        <tr>
+            <td align="left"><code>ad_source</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Рекламный источник</td>
+        </tr>
+        <tr>
+            <td align="left"><code>site_block</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Номер блока с номерами на сайте</td>
+        </tr>
+        <tr>
+            <td align="left"><code>count</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Количество номеров динамического КТ в блока с номерами на сайте</td>
+        </tr>
+        <tr>
+            <td align="left"><code>tp_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Уникальный идентификатор тарифного плана</td>
+        </tr>
+        <tr>
+            <td align="left"><code>op_id</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Уникальный идентификатор опции</td>
+        </tr>
+        <tr>
+            <td align="left"><code>component</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Мнемоническое название компонента</td>
+        </tr>
+        <tr>
+            <td align="left"><code>cost</code></td>
+            <td align="left">number</td>
+            <td align="left"></td>
+            <td align="left">Объем списания</td>
+        </tr>
+        <tr>
+            <td align="left"><code>service</code></td>
+            <td align="left">string</td>
+            <td align="left"></td>
+            <td align="left">Тип списания<br><code>activation_number_capacity</code> - плата за подключение номерной емкости<br><code>user_charge_number_capacity</code> - абонентская плата за пользование номерами<code>min_charge_tp</code> - минимальная абонентская плата по тарифу</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="json">JSON структура запроса</h3>
+<pre><code class="language-json">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;number&quot;,
+    &quot;method&quot;: &quot;get.profile_costs&quot;,
+    &quot;params&quot;: {
+        &quot;access_token&quot;: &quot;1&quot;,
+        &quot;project&quot;: &quot;uis2&quot;,
+        &quot;tp_id&quot;: 233,
+        &quot;op_ids&quot;: [
+            732
+        ],
+        &quot;components&quot;: [
+            &quot;dashboard&quot;,
+            &quot;extended_report&quot;,
+            &quot;sitephone&quot;,
+            &quot;google_adwords&quot;,
+            &quot;ppc_integration&quot;
+        ],
+        &quot;limits&quot;: {
+          &quot;max_sip_line&quot;: 100
+        },
+        &quot;number_capacity&quot;: [
+            {
+                &quot;prefix&quot;: &quot;73412&quot;,
+                &quot;owner_id&quot;: 1,
+                &quot;category&quot;: &quot;usual&quot;,
+                &quot;count&quot;: 1,
+                &quot;location&quot;: &quot;ijk&quot;,
+                &quot;component&quot;: &quot;va&quot;
+            },
+            {
+                &quot;prefix&quot;: &quot;73452&quot;,
+                &quot;owner_id&quot;: 1,
+                &quot;category&quot;: &quot;usual&quot;,
+                &quot;count&quot;: 1,
+                &quot;location&quot;: &quot;tjm&quot;,
+                &quot;component&quot;: &quot;va&quot;
+            },
+            {
+                &quot;prefix&quot;: &quot;7351&quot;,
+                &quot;owner_id&quot;: 1,
+                &quot;category&quot;: &quot;usual&quot;,
+                &quot;count&quot;: 1,
+                &quot;location&quot;: &quot;chel&quot;,
+                &quot;component&quot;: &quot;va&quot;
+            },
+            {
+                &quot;prefix&quot;: &quot;7800&quot;,
+                &quot;owner_id&quot;: 3,
+                &quot;category&quot;: &quot;bronze&quot;,
+                &quot;count&quot;: 1,
+                &quot;location&quot;: &quot;800&quot;,
+                &quot;component&quot;: &quot;va&quot;
+            },
+            {
+                &quot;prefix&quot;: &quot;7800&quot;,
+                &quot;owner_id&quot;: 3,
+                &quot;category&quot;: &quot;gold&quot;,
+                &quot;count&quot;: 1,
+                &quot;location&quot;: &quot;800&quot;,
+                &quot;component&quot;: &quot;va&quot;
+            },
+            {
+                &quot;prefix&quot;: &quot;7800&quot;,
+                &quot;owner_id&quot;: 3,
+                &quot;category&quot;: &quot;silver&quot;,
+                &quot;count&quot;: 1,
+                &quot;location&quot;: &quot;800&quot;,
+                &quot;component&quot;: &quot;va&quot;
+            },
+            {
+                &quot;is_dynamic&quot;: true,
+                &quot;site&quot;: &quot;my-site.ru&quot;,
+                &quot;ad_source&quot;: &quot;Яндекс.Маркет&quot;,
+                &quot;site_block&quot;: 1,
+                &quot;prefix&quot;: &quot;73452&quot;,
+                &quot;owner_id&quot;: 1,
+                &quot;category&quot;: &quot;silver&quot;,
+                &quot;count&quot;: 17,
+                &quot;owner_name&quot;: &quot;АО \&quot;ЭР-Телеком Холдинг\&quot;&quot;,
+                &quot;location&quot;: &quot;tjm&quot;,
+                &quot;user_charge&quot;: 350,
+                &quot;activation_cost&quot;: 250,
+                &quot;index&quot;: 21,
+                &quot;component&quot;: &quot;dynamic_call_tracking&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<h3 id="json_1">JSON структура ответа</h3>
+<pre><code class="language-json">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;number&quot;,
+    &quot;result&quot;: {
+        &quot;data&quot;: {
+            &quot;tp&quot;: [
+                {
+                    &quot;cost&quot;: 590,
+                    &quot;tp_id&quot;: 132,
+                    &quot;service&quot;: &quot;user_charge_tp&quot;
+                }
+            ],
+            &quot;ops&quot;: [
+                {
+                    &quot;cost&quot;: 0,
+                    &quot;op_id&quot;: 709,
+                    &quot;service&quot;: &quot;activation_op&quot;
+                }
+            ],
+            &quot;limits&quot;: [
+                {
+                    &quot;cost&quot;: null,
+                    &quot;limit&quot;: &quot;max_site&quot;,
+                    &quot;op_id&quot;: null,
+                    &quot;tp_id&quot;: 132,
+                    &quot;service&quot;: &quot;user_charge_physical_limit&quot;
+                }
+            ],
+            &quot;components&quot;: [
+                {
+                    &quot;cost&quot;: 0,
+                    &quot;op_id&quot;: null,
+                    &quot;tp_id&quot;: 132,
+                    &quot;service&quot;: &quot;activation_component&quot;,
+                    &quot;component&quot;: &quot;ppc_integration&quot;
+                }
+            ],
+            &quot;number_capacity&quot;: [
+                {
+                    &quot;cost&quot;: 250,
+                    &quot;site&quot;: null,
+                    &quot;count&quot;: 1,
+                    &quot;op_id&quot;: null,
+                    &quot;tp_id&quot;: 132,
+                    &quot;prefix&quot;: &quot;73412&quot;,
+                    &quot;service&quot;: &quot;activation_number_capacity&quot;,
+                    &quot;category&quot;: &quot;usual&quot;,
+                    &quot;location&quot;: &quot;ijk&quot;,
+                    &quot;owner_id&quot;: 1,
+                    &quot;ad_source&quot;: null,
+                    &quot;component&quot;: &quot;va&quot;,
+                    &quot;site_block&quot;: null
+                }
+            ]
+        },
+        &quot;metadata&quot;: {
+            &quot;version&quot;: null,
+            &quot;limits&quot;: {}
+        }
+    }
+}
+</code></pre>
+<h3 id="_4">Список возвращаемых ошибок</h3>
+<p>Смотрим раздел <a href="..#_getErrors">"Список ошибок для методов с глаголом get"</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Dt_estimate_number_count/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Расчет количества номеров для динамического КТ" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Расчет количества номеров для динамического КТ
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Call_cost/" class="md-footer__link md-footer__link--next" aria-label="Next: Расчет стоимости звонка" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Расчет стоимости звонка
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../js/init.js"></script>
+      
+    
+  </body>
+</html>
